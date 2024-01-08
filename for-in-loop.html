@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in loop over array and object.</title>
+    <style>
+        .btn{
+            background-color:aqua;
+            padding:20px, 20px;
+            height: 40px;
+            width: 150px;
+            border: 1px solid red;
+            border-radius: 4px;
+            font-size: 17px;
+        }
+        .btn:hover{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+   <div>
+    <button class="btn">Click Here! </button>
+   </div> 
+   <script>
+    var category=["Apple","Orange","Grape","Mango","Pineapple","Banana"]
+    for(var item in category){
+        document.write(category[item]+"<br>");
+    }
+
+
+    var person={
+        name:"Saikat Ghosh",
+        age:29,
+        gender:"Male",
+        Profession:" Software Engineer"
+    }
+    for(var item in person){
+        document.write( person[item]+"<br>");
+    }
+   </script>
+</body>
+</html>
