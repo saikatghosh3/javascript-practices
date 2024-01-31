@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Event</title>
+<style>
+    body{
+        font-family: tahoma;
+        
+    }
+
+    .btn{
+        width: 250px;
+        height: 250px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        margin-left: 300px;
+        background-color: aqua;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    button{
+        padding: 25px;
+        margin-left: 20px;
+        height: 70px;
+        width: 100px;
+        border: 2px solid black;
+        border-radius: 15%;
+        text-align: center;
+        background-color:rgba(0, 0, 0, 0.5);
+        color: aliceblue;
+    }
+
+    button:hover{
+        background-color: firebrick;
+    }
+    
+</style>
+</head>
+<body>
+     <div class="btn">
+    <button onclick="openWindow()"> open window</button>
+    <button onclick="closeWindow()"> Close Window</button>
+</div>
+    <script type="text/javascript">
+        
+        var myWindow;
+        function openWindow(){
+             myWindow =window.open("http://www.google.com" , "," ," width=500px,height=500px,left=250px,top=250px");
+        }
+        function closeWindow(){
+            window.close();
+        }
+    </script>
+</body>
+</html>

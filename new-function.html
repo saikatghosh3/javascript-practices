@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function example new</title>
+</head>
+<body>
+    <script>
+        document.write('Total subject - 5  <br> Total number -  500 <br>');
+        function sumMarks(bangla,english,math,physics,chamestry){
+            var a = bangla+english+math+physics+chamestry;
+            return a;
+        };
+        var b = sumMarks(50,50,50,80,80);
+        document.write('Marks obtain -' + b +'<br>'+' <br>');
+        function percentage(tm){
+            var c = tm/500*100;
+            return c;
+        };
+        var d = percentage(b);
+        document.write('percentage -' + d + '%');
+    </script>
+</body>
+</html>

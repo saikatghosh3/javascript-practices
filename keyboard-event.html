@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboaed Event</title>
+    <style>
+        body{
+            font-family: tahoma;
+            background-color: #771f6433;
+            background-size: 500%;
+
+        }
+        #form{
+            width: 250px;
+            margin: 100px auto 0 auto;
+            border: 2px solid #000;
+            border-radius: 25px;
+            padding: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            box-shadow: -2px 2px 15px #000;
+
+        }
+        p,input{
+            font-size: 20px;
+
+        }
+        input{
+            width: 225px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 8px;
+            background-color: #fff;
+            box-shadow: inset -2px 2px 10px #000;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="form">
+        <h1 id="h1" > Keyboard Event </h1>
+        <P> onekeydown</P>
+        <input type="text" onkeydown="document.getElementById('form').style.background=this.value"> <!--  "alert(this.value);"  first run the script then accept the value. it considers backspace as a general key.-->
+        <P>onkeyup</P>
+        <input type="text" onkeyup= "document.getElementById('form').style.background=this.value"> <!-- "alert(this.value);"  first accept the value then run the script-->
+        <P> onkeypress</P>
+        <input type="text" onkeypress="alert(this.value);"><!--it works like onkeydown but at the time of precessing backspace it don't show the messege -->
+    </div>
+</body>
+</html>
