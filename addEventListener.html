@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddEventListener</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: arial;
+}
+div#wrapper{
+    margin: 25px auto 0px auto;
+    width: 75%;
+    
+}
+div#wrapper h1{
+    width: 70%;
+    display: block;
+    background-color: #203d3a;
+    color:#fff;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 20px 20px 0px 0px;
+    margin-left: 100px;
+}
+div#wrapper img{
+    width:70%;
+    border-radius: 0px 0px 20px 20px;
+    cursor: pointer;
+    margin-left: 100px;
+    filter: grayscale(100%);
+
+}
+div#block1, div#block2{
+    width: 100%;
+    float: left;
+    margin-top: 25px;
+}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="block1">
+            <h1>Enjoy Nature</h1>
+            <img src="img1.jpg" id="img1">
+
+        </div><!--end block1-->
+        <div id="block2">
+            <h1> Love nature</h1>
+            <img src="img2.jpg" id="img2">
+
+        </div><!--end block2-->
+
+    </div><!--end wrapper-->
+    <script>
+        document.getElementById('img1').addEventListener("mouseover",function(){
+            this.style.filter = 'grayscale(0%)';
+        });
+        document.getElementById('img1').addEventListener("mouseout",function(){
+            this.style.filter = 'grayscale(100%)';
+        });
+        document.getElementById('img2').addEventListener("mouseover",function(){
+            this.style.filter = 'grayscale(0%)';
+        });
+        document.getElementById('img2').addEventListener("mouseout",function(){
+            this.style.filter = 'grayscale(100%)';
+        });
+    </script>
+</body>
+</html>
