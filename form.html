@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Element By Id examples</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: arial;
+
+        }
+        
+           
+    
+        header{
+            width: 50%;
+            background-color: green;
+            color: white;
+            padding: 15px 0px 20px 40px;
+        }
+        h2#header-title{
+            padding: 10px 0px;
+        }
+        div#content{
+            padding: 15px 0px 0px 45px;
+
+        }
+        div#content >h4{
+            border-bottom: 2px solid green;
+            padding: 0px 20px 10px  5px;
+            display: inline-block;
+            width: 50%;
+        }
+        li.list-items{
+            border-bottom: 1px solid gray;
+            padding: 10px 0px;
+            width: 50%;
+            list-style-type:number;
+        }
+        form{
+            padding-top: 20px;
+        }
+        form > input, button{
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h2 id="header-title">Saikat</h2>
+        <p id="tagline">Computer Education </p>
+
+    </header>
+    <div id="content">
+        <h4>courses</h4>
+        <ul id="items">
+            <li class="list-items"> Web Development</li>
+            <li class="list-items">Web Design</li>
+            <li class="list-items"> Python programming</li>
+            <li class="list-items"> Django Framework</li>
+
+        </ul>
+        <form>
+         <input type="text">
+         <button> Submit</button>
+        </form>
+    </div>
+    <!-- end content -->
+    <script>
+        // changed the 1st index-number text  (content)
+        var items = document.getElementsByClassName('list-items');
+        items[1].textContent = 'Animation';
+        items[2].style.color = 'purple'; // changed the color
+
+        //changed all the items color
+        for(var i = 0; i<items.length; i++)
+        {
+            items[i].style.color = 'red';
+        };
+    </script>
+</body> 
+</html>
