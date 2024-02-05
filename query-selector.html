@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selector and creating div and content with js </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: arial;
+            display:block;
+            align-items: center;
+            justify-content: center;
+            margin-left: 30%;
+           
+
+
+        }
+        
+           
+    
+        header{
+            width: 50%;
+            background-color: rgb(46, 79, 46);
+            color: white;
+            padding: 15px 0px 20px 40px;
+        }
+        h2#header-title{
+            padding: 10px 0px;
+        }
+        div#content{
+            padding: 15px 0px 0px 45px;
+
+        }
+        div#content >h4{
+            border-bottom: 2px solid rgb(46, 79, 46);
+            padding: 0px 20px 10px  5px;
+            display: inline-block;
+            width: 50%;
+        }
+        li.list-items{
+            border-bottom: 1px solid gray;
+            padding: 10px 0px;
+            width: 50%;
+            list-style-type:number;
+        }
+        form{
+            padding-top: 20px;
+        }
+        form > input, button{
+            padding: 5px;
+        }
+        button:hover {
+            background-color: rgb(150, 210, 190);
+            border-radius: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h2 id="header-title">Saikat</h2>
+        <p id="tagline">Computer Education </p>
+
+    </header>
+    <div id="content">
+        <h4>courses</h4>
+        <ul id="items">
+            <li class="list-items"> Web Development</li>
+            <li class="list-items">Web Design</li>
+            <li class="list-items"> Python programming</li>
+            <li class="list-items"> Django Framework</li>
+
+        </ul>
+        <form>
+         <input type="text">
+         <button> Submit</button>
+        </form>
+    </div>
+    <!-- end content -->
+    <script>
+        var headline = document.querySelector('#tagline');
+        headline.style.color = 'yellow';
+
+        var input =document.querySelector('input');
+        input.value = 'Enter your name'
+
+        var odd = document.querySelectorAll('li:nth-child(odd)');
+        for(var i =0; i<odd.length; i++){
+            odd[i].style.backgroundColor = '#f4f4f4';
+        };
+        
+        var even = document.querySelectorAll('li:nth-child(even)');
+        for(var i =0; i<even.length; i++){
+            odd[i].style.backgroundColor = 'White';
+        };
+
+// creting new div
+        var newDiv = document.createElement('div');
+        // adding a class
+         newDiv.className ='box';
+         // adding an id
+         newDiv.id ='text-box';
+         // creating a text node 
+         var newDivText = document.createTextNode('welcome Everyone');
+        
+         newDiv.appendChild(newDivText);
+
+         // To show in body
+         var container = document.querySelector('#content');
+         var form = document.querySelector('form')
+         container.insertBefore ( newDiv,form);
+
+         console.log('newDiv'); 
+    </script>
+</body>
+</html>
