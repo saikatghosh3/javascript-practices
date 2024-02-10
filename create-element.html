@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create element with javaScript</title>
+</head>
+<body>
+    <!-- Write a JavaScript program that creates a button and add a click event listener to log a message when it's clicked.-->
+    
+    <script>
+        const button =document.createElement('button');
+        button.textContent = 'Click me';
+        // Add click event Listenier to the button
+        button.addEventListener('click',() =>
+        {
+            console.log('button clicked!');
+        });
+        // Append the button to the document body
+        document.body.appendChild(button);
+        
+    </script>
+</body>
+</html>
