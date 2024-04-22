@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating</title>
+    <style>
+    
+    .rating-container{
+        display: block;
+        text-align: center;
+        justify-content: center;
+        background-color:rgb(147, 138, 138);
+        height: 100vh;
+        width:100%
+    }
+        h2{
+            text-align: center;
+        }
+        .star-rating {
+  display: inline-block;
+  
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 25px;
+  color: #ccc;
+  cursor: pointer;
+  float: right;
+}
+
+.star-rating label:before {
+  content: '\2605'; /* Unicode star character */
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+  color: #ffc107; /* Change color of selected stars */
+}
+.comment{
+    display:inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="rating-container">
+        <h2>Customer Reviews</h2>
+        <div id="reviews-list">
+        <form id="review-form">
+          <label for="username">Name:</label><br>
+          <input type="text" id="username" required><br>
+          <label for="rating">Rating:</label><br>
+          <div class="star-rating"><br>
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+          </div>
+          <br><br>
+          <br>
+          <label for="comment">Comment:</label>
+          <textarea id="comment" rows="4" required></textarea><br><br>
+          <button type="submit">Submit Review</button>
+    
+        </form>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const reviewForm = document.getElementById('review-form');
+  const reviewsList = document.getElementById('reviews-list');
+
+  reviewForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const rating = document.querySelector('input[name="rating"]:checked').value;
+    const comment = document.getElementById('comment').value;
+
+    const reviewItem = document.createElement('div');
+    reviewItem.className = 'review-item';
+    reviewItem.innerHTML = `
+      <div><strong>${username}</strong> rated ${rating} stars</div>
+      <div>${comment}</div>
+    `;
+    reviewsList.appendChild(reviewItem);
+
+    // Clear form inputs
+    document.getElementById('username').value = '';
+    document.querySelector('input[name="rating"]:checked').checked = false;
+    document.getElementById('comment').value = '';
+  });
+});
+
+      </script>
+      
+</body>
+</html>
