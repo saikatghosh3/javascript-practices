@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es6 practice</title>
+</head>
+<body>
+    <script>
+        // string es6
+        let x = 20;
+        let y = 23;
+        let sum = x + y ;
+        console.log(`sum is ${sum}. the end`);
+       // console.log(`sum is ${x+y}. the end`); in this case we don't have to write sum= x+y;
+        let name = "saikat Ghosh";
+        //let message = `I am ${name} I am learning JavaScript.`;
+        console.log(message);
+
+        // es6 function
+        const add =(f,g) => {
+            console.log(f+g);
+
+        }
+        add(49,10);
+
+        function message(text = "hello this is default parameter"){
+            console.log(`${text}`)
+        }
+        message();
+        message("I love es6");
+        
+        </script>
+</body>
+</html>

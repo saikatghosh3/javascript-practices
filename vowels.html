@@ -1,0 +1,28 @@
+<!-- write a function to count vowels in given string -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count the numbers of vowels</title>
+</head>
+<body>
+    
+
+    <script>
+    function countVowels(str){
+        const vowels = 'aeiouAEIOU';
+        let count = 0;
+        for(let char of str){
+            if (vowels.includes(char)) {
+                count ++;
+            }
+        }
+        return count;
+    }
+
+    console.log(countVowels("hi how are you all. Today i will like to talk about myself"));
+    </script>
+</body>
+</html>
