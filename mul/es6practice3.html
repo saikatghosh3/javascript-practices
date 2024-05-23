@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript es6 practice part 3</title>
+</head>
+<body>
+    <script>
+        //arrow function with map and filter
+        var students = [
+            {
+                id:101,
+                name:'Saikat Ghosh', 
+                gpa: 7.91
+            },
+            {
+                id:102,
+                name:'Additya', 
+                gpa: 6.5
+            },
+            {
+                id:103,
+                name:'Sandip reddy', 
+                gpa: 7.6
+            },
+            {
+                id:104,
+                name:'Vamsi Krishna', 
+                gpa: 8.00
+            },
+            {
+                id:105,
+                name:'Sai Teja', 
+                gpa: 5.25
+            },
+        ]
+
+        function studentNames (){
+            return students.filter(function(x){
+                return x.gpa>7
+            }).map(function(y){
+                return y.name;
+            })
+        }
+        console.log(studentNames());
+        const studentNames2 =() => students.filter((a) => a.gpa > 7).map((y) => y.id);
+        console.log(studentNames2());
+        // here after filter all goes to a, then we've given a condition after that, we've used map and store it to y, and from the y we've printed the id.
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript es6 practice</title>
+</head>
+<body>
+    <script>
+        // destructuring function parameters
+        // const studentInfo =({id, fullname}) => {
+        //     console.log(`${id}, ${fullname}`)
+        // }
+        // const student ={
+        //     id : 101, 
+        //     fullname: "Saikat ghosh"
+        // }
+        // studentInfo(student);
+
+
+        // array.find() and array.findindex() 
+        // find method condition first j condition manch korbe only take return korbe otherwise -1 return korbe.
+        // let numbers = [5,2888,314, 55, 33,22]
+        // let firstEvenNumber = numbers.find(x => x%2===0);
+        // console.log(firstEvenNumber)
+        let numbers = [5,55,14, 6, 79]
+        const evenNumber = (value,index,array) => {
+            if (value%2===0)
+            return value;
+        }
+        let firstEvenNumber = numbers.find(evenNumber);
+        console.log(firstEvenNumber)
+    </script>
+</body>
+</html>
