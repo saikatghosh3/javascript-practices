@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript promise</title>
+</head>
+<body>
+    <script>
+      //   console.log("this is one");
+      // setTimeout(function(){
+      //   console.log("hello two in 3 seconds")
+      // }, 3000)
+      // console.log("my name is " + "hello three")
+
+// const a =10;
+//       const promise =  new Promise((resolve, reject) => {
+//         if (a >=10 ){
+//           resolve("success");
+//         }else{
+//           reject("Failure!")
+//         }
+        
+//       });
+
+//       promise.then(
+//         // we have taken previous value by the means of then
+//         result =>{
+//           console.log(result);
+//         },
+//         error =>{
+//           console.error(error);
+//         }
+//       );
+// // Another example of promise
+// let p1= new Promise((resolve, reject) => {
+//   alert('hey i am not resolved yet');
+//   setTimeout(() =>{
+//     resolve(1);
+//   },2000)
+// })
+// p1.then(() => {
+//   console.log("congratulations this is now resolved")
+
+
+// })
+
+
+// Example of promises
+
+let p1 = new Promise((resolve, reject) => {
+  setTimeout(()=>{
+    resolve("value 1")
+  },1000);
+});
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(()=>{
+    resolve("value 2")
+  },2000);
+});
+let p3 = new Promise((resolve, reject) => {
+  setTimeout(()=>{
+    resolve("value 3")
+  },3000);
+});
+// if we want to get one value
+// p1.then((value) =>{
+//   console.log(value)
+// })
+// now if we want to get multiple value at one time 
+// in this case we'll get the value after the 3rd program execution
+// we'll use promise-all method
+let promise_all = Promise.all([p1,p2,p3]);
+promise_all.then((value) => {
+  console.log(value);
+})
+
+
+    </script>
+</body>
+</html>

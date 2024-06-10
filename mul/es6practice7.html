@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and catch and other method explanation.</title>
+</head>
+<body>
+    <script>
+        // try block contains the code that you want to execute. Javascript will run this code normally.
+        // catch bolck will check if there is error occur in the try block. if there is error it will show error message
+        function divide(a, b) {
+  try {
+    // Try to perform the division
+    return a / b;
+  } catch (error) {
+    // Catch any errors and provide a user-friendly message
+    return "Oops! There was an error: " + error.message;
+  }
+}
+
+const result = divide(10, 0);
+console.log(result); // Output: "Oops! There was an error: Cannot divide by zero"
+
+//synchronous function run one after another.
+// Asynchronous function, we can delay the function.
+// for example
+console.log("start")
+setTimeout(function(){
+    console.log("hey I am good");
+}, 3000)
+console.log("End")
+    </script>
+</body>
+</html>
