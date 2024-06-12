@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and catch consept</title>
+</head>
+<body>
+    <script>
+        // setTimeout(()=> {
+        //  console.log("hacking wifi.... Please wait .......")
+        // },1000)
+        // setTimeout(()=> {
+        //  console.log("hacking email.... Please wait .......")
+        // },2000)
+        
+        // try{
+        //     console.log(saikat);
+        // }
+        // catch(error){
+        //     console.log ("error has found.")
+        // }
+
+        // setTimeout(()=> {
+        //  console.log("hacking facebook id .... Please wait .......")
+        // },3000)
+
+
+        // error has two properties like error name and error message
+        // try{
+        //     harry
+        // }catch (error){
+        //     console.log(error.name)
+        //     console.log(error.message)
+        // }
+
+        // now if want to custom a new error then we should throw a error
+        // try{
+        //     saikat
+        //     throw new ReferenceError("saikat is a good boy")
+        // }
+        // catch(error){
+        //     console.log(error.name)
+        //     console.log(error.message)
+        // }
+
+        // Another example
+        // try{
+        //     let age = prompt("Enter you age")
+        //     age = Number.parseInt(age)
+        //     if(age>=100){
+        //         throw new ReferenceError("This is probably not true")
+        //     }
+        // }
+        // catch(error){
+        //     console.log(error.name)
+        //     console.log(error.message)
+        // }
+        // console.log("the Script is still running");
+
+     // example of finally {if there is error on try,catch bolck the finally section will run}
+     try{
+        let a=1;
+        console.log("program ran successfully")
+     }
+     catch(error){
+      console.log("This is an error")
+     }
+     finally{
+        console.log("This program is running successfully")
+     }
+    </script>
+</body>
+</html>
