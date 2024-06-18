@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listenr problem with solutions</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: thistle;
+            border: 1px solid red;
+            border-radius: 5px;
+            justify-content: center;
+            text-align: center;
+            display: flex;
+        }
+    </style>
+</head>
+
+<div class="box" id="box"> </div>
+<body>
+    <script>
+        //1.Write a JavaScript program that creates a button and add a click event listener to log a message when it's clicked.
+        // const  button = document.createElement('button');
+        // button.textContent = 'click me';
+
+        // button.addEventListener('click',()=>{
+        //     console.log("Button clicked");
+        // });
+        // document.body.appendChild(button);
+
+        
+        
+        //2.Write a JavaScript function that changes the background color of an element when a mouse enters it.
+            // function changeColor(elementId,color){
+            //     const element = document.getElementById(elementId);
+            //     if (element) {
+            //         element.addEventListener('mouseenter', () => {
+            //             element.style.backgroundColor = color;
+            //         });
+            //     }
+            // }
+   
+
+            // changeColor('box', 'green');
+            // This can be done by another way.
+
+            const div = document.getElementById('box');
+            let originalColor = div.style.backgroundColor;
+        
+            div.addEventListener('mouseenter', ()=> {
+                div.style.backgroundColor = 'lightgreen';
+            });
+            div.addEventListener('mouseleave', ()=>{
+                div.style.backgroundColor = 'thistle';
+            });
+   </script>
+</body>
+</html>

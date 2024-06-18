@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error handling examples</title>
+</head>
+<body>
+    <script>
+        //1.Write a JavaScript function that takes a number as a parameter and throws a custom 'Error' if the number is not an integer.
+
+    // function validateInteger(number){
+    //     if (!Number.isInteger(number))
+
+    //     {throw new error("invalid number. Please type a valid integer")
+    
+    // }
+    // console.log('Number is valid:',number)
+    // }
+//Example 
+// try{
+//     validateInteger(12);
+//     validateInteger(12.34)
+// }
+// catch (error){
+//     console.log("error massage: ", error.message)
+// }
+//2.Write a JavaScript function that accepts two numbers as parameters and throws a custom 'Error' if the second number is zero.
+//  function divide(n1, n2){
+//     if( n2 === 0){
+//         throw new Error('Error: Division is not possible')
+//     }
+//     return n1 / n2 ;
+//  }
+//  console.log(divide(8,3));
+//  console.log(divide(8,0))
+
+//3.Write a JavaScript function that takes a number as a parameter and throws a custom 'Error' if the number is negative.
+// function lila(n){
+//     if(n < 0 ){
+//         throw new Error("error! negetive number is not allowed");
+//     }
+   
+//     return n ;
+// }
+
+// console.log(lila(5));
+// console.log(lila(-5));
+
+//4.Write a JavaScript function that takes a string as a parameter and throws a custom 'Error' if the string is empty.
+
+// function name (str){
+//     if(str.length === 0){
+//         throw new Error('sorry the string is empty');
+//     }
+// }
+
+
+// // example:
+// try{
+//     const string1 = "hello world";
+//     name(string1)
+//     const string2 = '';
+//     name(string2)
+// }
+// catch (error) {
+//     console.log('Error:', error.message);
+// }
+
+//5.Write a JavaScript program that demonstrates the use of the 'try-catch-finally' statement to catch and handle an error, 
+//and then execute some cleanup code in the 'finally' block.
+
+function divide_Number(x, y){
+    try{
+        if(typeof x !=='number' || typeof y !='number'){
+            throw new TypeError("Invalid number")
+        }
+        if (y===0){
+            throw new Error('Invalid divisor, cannot be divided by zero');
+        }
+        const result = x /y ;
+        console.log('result:', result);
+    }
+    catch(error){
+        console.log('Error', error.massage)
+    }
+    finally{
+        console.log('Cleanup code executed');
+    }
+}
+
+// example:
+divide_Number(10, 2);
+divide_Number(-10, 2);
+divide_Number(10, 0);
+
+    </script>
+</body>
+</html>
