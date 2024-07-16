@@ -128,10 +128,63 @@
 
       // IIFE function = immediately invoked function expression example
       // And it is not accessable outside the function 
-      (function() {
-        var message = "hello world!";
-        console.log(message);
-      }) ();
+    //   (function() {
+    //     var message = "hello world!";
+    //     console.log(message);
+    //   }) ();
+// callback function in javascript
+// when we pass a function as a argument of another function then it is called callback function
+//  function processData (data){
+//     console.log("processing....."+ data);
+
+//  }
+//  function deleteData(data){
+//     console.log("deleting....." + data);
+//  }
+//  function func(methodName){
+//     methodName("saikat");
+//  }
+//  func(deleteData);
+
+// Higher order function : the function which takes other function as an argument that is called higher order function
+//Example:
+// function square(x){
+//     console.log(`square of ${x}: ${x *x}`);
+// }
+
+// function higherOrderFunction(num, callback){// Example of callback function
+//     callback(num);
+// }
+// higherOrderFunction(6,square);// higher order function.
+
+// Another example
+const  taskOne = (callback)=>{
+    console.log("Task1");
+    callback();
+};
+const taskTwo = (callback) =>{
+    setTimeout(()=>{
+        console.log("Task2. data is loading");
+        callback();
+    },3000);
+};
+const taskThree = (callback)=>{
+    console.log("task3");
+    callback();
+} 
+const taskFour = (callback)=>{
+    console.log("task4");
+    callback();
+} 
+taskOne(function f1(){
+    taskTwo(function f2(){
+        taskThree(function f3(){
+            taskFour(function f4(){
+                console.log("Everything is fine")
+            })
+        })
+    })
+});
 
 
     </script>
