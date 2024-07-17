@@ -158,35 +158,103 @@
 // higherOrderFunction(6,square);// higher order function.
 
 // Another example
-const  taskOne = (callback)=>{
-    console.log("Task1");
-    callback();
-};
-const taskTwo = (callback) =>{
-    setTimeout(()=>{
-        console.log("Task2. data is loading");
-        callback();
-    },3000);
-};
-const taskThree = (callback)=>{
-    console.log("task3");
-    callback();
-} 
-const taskFour = (callback)=>{
-    console.log("task4");
-    callback();
-} 
-taskOne(function f1(){
-    taskTwo(function f2(){
-        taskThree(function f3(){
-            taskFour(function f4(){
-                console.log("Everything is fine")
-            })
-        })
-    })
-});
+// const  taskOne = (callback)=>{
+//     console.log("Task1");
+//     callback();
+// };
+// const taskTwo = (callback) =>{
+//     setTimeout(()=>{
+//         console.log("Task2. data is loading");
+//         callback();
+//     },3000);
+// };
+// const taskThree = (callback)=>{
+//     console.log("task3");
+//     callback();
+// } 
+// const taskFour = (callback)=>{
+//     console.log("task4");
+//     callback();
+// } 
+// taskOne(function f1(){
+//     taskTwo(function f2(){
+//         taskThree(function f3(){
+//             taskFour(function f4(){
+//                 console.log("Everything is fine")
+//             })
+//         })
+//     })
+// });
 
 
-    </script>
+// // Array and its some mehtod
+// let numbers = [34,4,66,67,777,2 ,1];
+ 
+// //  numbers.push(5);
+// //  console.log(numbers);
+// //   numbers.pop();
+// //   console.log(numbers);
+//   numbers.shift(1); // remove the 1st element
+//   console.log(numbers);
+// //   numbers.unshift(0);// add 0 at the beginning.
+// //   console.log(numbers);
+//     // numbers.splice(1,1);// remove the first index element
+//     // console.log(numbers);
+// iteration over array
+// const numbers = [1,2,3,4,56,7,8,9];
+//  for(let i = 2;i<numbers.length;i++){
+//     console.log(numbers[i]);
+//  }
+// for (const number of numbers){
+//     console.log(number);
+// }
+// numbers.forEach(function(number){
+//     console.log(number);
+// });
+// Example of math
+// const number = [1,3,2,4,5,6,7,9,8];
+//  const double = number.map(num => num *2);
+//  console.log(double);
+
+
+//  // filter method with example
+
+//  const nnumber = [3,4,5,6,6, 7, 8];
+//  const evennumber = nnumber.filter(num => num % 2 === 0 );
+//  console.log(evennumber);
+
+ // reducer method
+
+//  const numbers = [1,2,3,4,6,7];
+// const product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue,)
+// console.log(product);
+
+// some method checks at least one element pas the condition it will give value in ture /false
+//Every method checks every element pass the condition and give resutl in true/false
+//  const newnumber = [1,2,3,4,6,7,8];
+//  const oneElement = newnumber.some( num => num %2 ===0);
+//  const everElement = newnumber.every(num => num >0);
+//  console.log(everElement);
+//   console.log(oneElement);
+//   newnumber.reverse();
+//   console.log(newnumber);
+
+//   // includes checkes whether the array has certain value or not. it gives result in true or false.
+//   const has2 = newnumber.includes(2);
+//   console.log(has2);
+// Replace method in string 
+const name = 'Saikat gohosh';
+const newName = name.replace("Saikat", "Tonoy"); // Here first one is called pattern and second one is called replacement.
+console.log(newName);
+
+
+// The split method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.
+ const random = "one, two , there, four";
+ const newrandom = random.split(",", 3);
+ console.log(newrandom);
+
+
+
+   </script>
 </body>
 </html>
