@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic jvaScript</title>
 </head>
+
+
 <body>
+<div>
+
+</div>
+<br>
+<br>
+<!-- this is for event handdler example -->
+
+<!-- <div>
+  <button>Click me</button>
+  <p> I want to break free, I want break free.</p>
+</div> -->
+
+<br>
+<br>
+<div class="">
+  <button>Again click me</button>
+  <p>The more you learn, The more you earn</p>
+</div>
+
     <script>
+
+   // Example of event handlers  
+
+//  const changeText= () => {
+//   const p = document.querySelector('p');
+//   p.textContent = "I changed because of an event handler property"
+//  }
+
+//  // add event handler property to the button
+//  const button = document.querySelector('button');
+//  button.onclick = changeText;
+
+ // example of event listener this is the most prefered way.
+
+const changeText = () =>{
+  const p = document.querySelector('p');
+  p.textContent = " I changed because of you ";
+
+}
+
+// add event listener 
+const button = document.querySelector('button');
+button.addEventListener('click', changeText);
+
+
+
+
+
 //       const globalVar = "I'm a global variable";
 // function foo() {
 //   console.log(globalVar); // Accessible within the function
@@ -243,18 +292,363 @@
 //   const has2 = newnumber.includes(2);
 //   console.log(has2);
 // Replace method in string 
-const name = 'Saikat gohosh';
-const newName = name.replace("Saikat", "Tonoy"); // Here first one is called pattern and second one is called replacement.
-console.log(newName);
+// const name = 'Saikat gohosh';
+// const newName = name.replace("Saikat", "Tonoy"); // Here first one is called pattern and second one is called replacement.
+// console.log(newName);
 
 
-// The split method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.
- const random = "one, two , there, four";
- const newrandom = random.split(",", 3);
- console.log(newrandom);
+// // The split method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.
+//  const random = "one, two , there, four";
+//  const newrandom = random.split(",", 3);
+//  console.log(newrandom);
+
+          // object related program
+           
+        //   const userInfo = {
+        //     firstName:"saikat",
+        //     lastName:"Ghosh",
+        //     age: 30,
+        //     nationality:"Bangladeshi",
+        //     myfunc: function (){
+        //         console.log("hi how are you all. Nice to meet you.");
+        //     },
+        //     myfunc2: function(){
+        //         this.myfunc();
+        //         console.log("My name is saikat Ghosh, I am learning JavaScript");
+        //     }
+        //   };
+
+        //  userInfo.myfunc2();  // this is the way of call the funciton inside an object.
+        //   console.log(userInfo.firstName);
+        //   console.log(userInfo["nationality"]);
+
+        //   problem and solution
+    //  jhon likes to tip 20% if the bill is less than $50 
+    //  and 15% when bill is between  $50 and $200 and 10% if the bill is more than $200
+        // function tipcalculator(bill){
+        //     var parcentage;
+        //     if (bill < 50){
+        //           parcentage = .2;
+        //     } else if (bill >= 50 && bill <200){
+        //          parcentage = .15
+        //     }else{
+        //         parcentage = .1
+        //     }
+        //     return parcentage *bill;
+
+        // }
+
+        // console.log(tipcalculator(34));
+        // console.log(tipcalculator(66));
+        // console.log(tipcalculator(300));
+
+//   problem 2
+// create 2 objects name, give them info and compare their bmi
+// var jhon = {
+//     fullName:"jhon wick",
+//     mass:90,
+//     height:1.92,
+//     calcBMI:function() {
+//         this.bmi = this.mass / (this.height * this.height)
+//       return this.bmi;
+//     }
+// }
+
+// var Mark = {
+//     fullName:"Mark Henry",
+//     mass:95,
+//     height:1.30,
+//     calcBMI:function() {
+//         this.bmi = this.mass / (this.height * this.height)
+//        return this.bmi;
+//     }
+// }
+
+// jhon.calcBMI();
+// Mark.calcBMI();
+// console.log(jhon,Mark);
+
+// if(jhon.bmi > Mark.bmi) {
+//     console.log(jhon.fullName + 'has a higher BMI of ' + jhon.bmi);
+//  } else if(Mark.bmi>jhon.bmi){
+//     console.log(Mark.fullName + 'has a higher BMI of ' + Mark.bmi);
+
+//  } else{
+//     console.log("both have the same bmi");
+//  }
+
+
+// i transition exam solutions
+// for(var i = 0 ;i<5; i++ ){
+//     setTimeout(function(){
+//         console.log(i);
+//     },i*1000);
+// }
+// // output will be 5,5,5,5,5,5
+
+// let x ={
+//     x:10, y:20
+// };
+// let y = {x:20};
+// let z = Object.create(y);
+// console.log(z.y);
+// output wil be undefined
+
+// let i = 0;
+// do{
+//     console.log(i);
+
+// }while(i++ <3);
+// output will be 0123
+
+// let i = 0;
+// while(i++ <3){
+//     console.log(i);
+// }
+// output will be 123
+
+// for(var i=0; i<10; i++){
+//     console.log(i);
+// }
+
+// addig new property in the object
+// let person = {
+//     name:"saikat"
+// }
+// person.job = "Engineer";
+// person.age= 20;
+// console.log(person);
+
+// A method is a javaScript function which is binded with a object. Method is used to perform action over an object.
+//   const calculator ={
+//     add:function(a,b){
+//         return a+ b;
+//     },
+//     subtract(a,b){
+//         return a -b;
+//     },
+
+//   };
+//   console.log(calculator.add(5,3));
+//   console.log(calculator.subtract(5,3));
+  // function constructor example
+//   var jhon = {
+//     name:'jhon',
+//     yearofBirth:1990,
+//     job:'teacher'
+//   };
+//   var person = function(name,yearofBirth,job){
+//     this.name = name;
+//     this.yearofBirth =yearofBirth;
+//     this.job = job;
+//     this.calculateAge = function (){
+//         console.log(2024 - this.yearofBirth);
+//     }
+//   }
+
+// person.prototype.calculateAge = {
+//     function(){
+//         console.log(2024- this.yearofBirth);//  This is the prototype property, it inherite the partent property.
+//     }
+// }
+
+// person.prototype.lastName = ' smith'; // this is also example of prototype. all of them can access the parent element.
+
+//   var jhon = new person('jhon',1990,'teacher');
+//   var jane = new person('jhon',1980,'Designer');
+//   var mark = new person('jhon',1940,'retired');
+
+//   jhon.calculateAge();
+//   jane.calculateAge();
+//   mark.calculateAge();
+
+//   console.log(jhon.lastName);
+//   console.log(jane.lastName);
+//   console.log(mark.lastName);
+ 
+  
 
 
 
-   </script>
+  // clouser function
+  // function retirement(retirementAge){
+  //   var a ='years left until retirement.';
+  //   return function(yearofBirth){
+  //     var age = 2016 - yearofBirth;
+  //     console.log((retirementAge - age) + a); 
+  //   }
+
+  // }
+  // var retirementUS = retirement(66);
+  // retirementUS(1990);
+  
+// bind,call and apply method
+
+// var jhon = {
+//   name:'jhon',
+//   age:25,
+//   job:'teacher',
+//   presentation:function(style,timeofDay){
+//     if(style==='formal'){
+//       console.log('Good' + timeofDay +', Ladis and gentlemen! +I\'m'+ this.name +' , and I\'m a'+ this.job + 'and I\'m'+this.age + 'years old' );
+//     }else if(style ==='friendly'){
+//        console.log('Hey! what\'s up?  I\'m'+ this.name +' , and I\'m a' + this.job + 'and I\'m'+this.age + 'years old + Have a nice' + timeofDay + '.');
+//     }
+//   }
+// }
+
+// var emily ={
+//   name:"emily",
+//   age:21,
+//   job:'student'
+// }
+// jhon.presentation('formal', 'morning');
+// jhon.presentation.call(emily,'friendly','afternoon');  //Here we are calling jhon property and using it in other object. by call method.(it is also called method borowwing )
+
+// // bind method
+// var jhonfriendly = jhon.presentation.bind(jhon,'friendly'); // bind doesn't immediately call the function but it generates a copy of the function.
+// jhonfriendly('morning');
+// jhonfriendly('night');
+
+// var emilyFormal = jhon.presentation.bind(emly,'formal');
+// emilyFormal('afternoon');
+
+// Object Destructuring
+// Object desturcturing is a feature in js that allows you to extract values from object and assign them to variables in a more concise and redable way. 
+// const person ={
+//   firstName:"saikat",
+//   lastName:"Ghosh",
+//   age:30,
+// };
+// const{firstName,lastName,age} =person;
+// console.log(firstName);
+// console.log(lastName);
+
+// // we can also assign variables with different names
+
+// const User = {
+//   firstName:"Alice",
+//   lastName:"Smith"
+// }
+// const{firstName:first,lastName:last} = User;
+// console.log(first);
+// console.log(last);
+
+// //Spread Operator:The spread operator is denoted by threedots and is used to spread the elements of an array or the properties of an object into another array or object.
+// let array1 = [1,2,3];
+// let array2 = [4,5,6];
+// let combine = [...array1,...array2];
+// console.log(combine);
+
+// //JSON.parse(json) is responsible for convert the json data into javascript object.
+// //JSON.sringify(object)for converting javaScript object into json data.
+// const jsonString = '{"name":"John Doe","age":30}';
+// const data = JSON.parse(jsonString);
+// console.log(data.name); 
+
+// const jsonString2 = JSON.stringify(data);
+// console.log(jsonString2);
+
+// // working with date
+
+// const date = new Date(); 
+
+// const year = date.getFullYear(); // 
+
+// const month = date.getMonth(); // 0 for January, 11 for December
+
+// const day = date.getDate();
+
+// const hours = date.getHours();
+
+// const minutes = date.getMinutes();
+
+// const seconds = date.getSeconds();
+// console.log(date);
+// console.log(year);
+// console.log(month);
+// console.log(day);
+// console.log(hours);
+// console.log(minutes);
+
+// // class and object
+// class Person {   // a class is crated
+//   constructor(name,age){
+//     this.name=name;
+//     this.age=age;
+//   }
+//   greet(){
+//     console.log(`Hello, my name is ${this.name}. and my age is ${this.age}`)
+//   }
+// }
+// // Creating object form a class:
+// const person1 = new Person("saikat",30);
+// const person2 = new Person("Tonoy",25);
+
+
+// // using class Methods:
+// person1.greet();
+// person2.greet();
+
+// //  getter and setter
+// // A Getter is a method that is used to retrive the value of the property
+// class Circle{
+//   constructor(radius){
+//     this._radius = radius;
+//   }
+//   get diameter(){
+//     return this._radius *2;
+//   }
+// }
+
+// const myCircle = new Circle(5);
+// console.log(myCircle.diameter);
+ 
+
+// // Setter:A setter is a method used to set the value of a property. it is defined using set keyword
+//  class Temperature{
+//   constructor(celsius){
+//     this._celsius = celsius;
+//   }
+//   set fahrenheit(value){
+//     this._celsius = (value-32)/18;
+//   }
+//  }
+//  const temp = new Temperature(35);
+//  temp.fahrenheit = 77; 
+//  // calls the setter, updates the cilsius value to 25
+// // simple example
+
+//  function funcA(m,n) {
+//   return m * n;
+// }
+//  function funcB(m,n) {
+//   return funcA(m,n);
+// }
+//  function getResult(num1, num2) {
+//    return funcB(num1, num2)
+//   }
+//  var res = getResult(5,6);
+//  console.log(res);
+
+//Random practice
+
+// }
+// var firstName = 'saikat';
+// age = 32;
+
+// var job, ismarried;
+
+// job = 'teacher';
+// ismarried = 'false';
+
+// console.log(firstName  +  '' + 'is a'  +  job + 'and he is ' + age + 'years old' + 'is he married?' + ismarried); 
+
+const div = document.querySelector('div');
+div.setAttribute('style','background-color:red');
+div.style.height = '100px';
+div.style.width = '100px';
+div.style.border = '2px solid black';
+  </script>
 </body>
 </html>
