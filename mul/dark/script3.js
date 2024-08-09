@@ -21,8 +21,10 @@ let currentMode = "light";
     if(currentMode ==="Light"){
         currentMode = "dark";
         body.classList.add('dark');
+        body.classList.remove('light');
     }else{
         currentMode ="light";
         body.classList.add('light');
+        body.classList.remove('dark');
     }
  });
