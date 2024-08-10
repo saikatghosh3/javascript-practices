@@ -80,14 +80,47 @@ for(let i=1; i<=n; i++){
 console.log(arr);
 
 // calculating sum 
-let sum = arr.reduce((res, curr) => {
-    return res + curr;
-});
-console.log(sum);
+// let sum = arr.reduce((res, curr) => {
+//     return res + curr;
+// });
+// console.log(sum);
 
-// product of 3  meaning 1*2*3 in a short form factorial
+// // product of 3  meaning 1*2*3 in a short form factorial
 
-let factorial = arr. reduce((res,curr)=>{
-    return res *curr;
-});
-console.log("factorial = ", factorial);
+// let factorial = arr. reduce((res,curr)=>{
+//     return res *curr;
+// });
+// console.log("factorial = ", factorial);
+
+//Qs:you are creating a website for your bollege. Create a class User with 2 properties, and & email. it also has a method called vewData()that allows user to vies website data.
+// Create a new class called Admin which inherits form User. Add a new method called editData to Admin that allows it to edit website data. 
+// slove two question together
+
+
+let Data = "secret information";
+
+
+class User {
+    constructor(name,email){
+        this.name = name;
+        this.email = email;
+    }
+    viewData(){
+        console.log("data =",Data);
+    }
+}
+class Admin extends User{
+    constructor(name, email){
+        super(name,email);
+
+    }
+    editData(){
+        Data = "some new value";
+    }
+}
+
+let student1= new User("saikat", "saikat@gmail.com");
+let student2= new User("tonoy", "tonoy@gmail.com");
+let teacher1 = new User("dean", "dean@gmail.com");
+let Admin1 = new Admin("admin", "admin@gmail.com")
+// in the console you can write sutdent1  and student1.viewdata(); it will show information.
