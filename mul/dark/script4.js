@@ -70,14 +70,14 @@
 // Take a number n as input from the user.Create an array of numbers from 1 to n;
 // use the reduce method to calculate sum of all numbers in the Array.
 // use teh reduce method to calculate the product of all numbers in the Array 
-let n = prompt("Enter your number : ");
-let arr = []; // we will store the value in empty array
+// let n = prompt("Enter your number : ");
+// let arr = []; // we will store the value in empty array
 
-for(let i=1; i<=n; i++){
-    arr[i-1] = i; //1(0) mane 1 , 0 index a save hobe 
+// for(let i=1; i<=n; i++){
+//     arr[i-1] = i; //1(0) mane 1 , 0 index a save hobe 
 
-}
-console.log(arr);
+// }
+// console.log(arr);
 
 // calculating sum 
 // let sum = arr.reduce((res, curr) => {
@@ -97,30 +97,48 @@ console.log(arr);
 // slove two question together
 
 
-let Data = "secret information";
+// let Data = "secret information";
 
 
-class User {
-    constructor(name,email){
-        this.name = name;
-        this.email = email;
-    }
-    viewData(){
-        console.log("data =",Data);
-    }
-}
-class Admin extends User{
-    constructor(name, email){
-        super(name,email);
+// class User {
+//     constructor(name,email){
+//         this.name = name;
+//         this.email = email;
+//     }
+//     viewData(){
+//         console.log("data =",Data);
+//     }
+// }
+// class Admin extends User{
+//     constructor(name, email){
+//         super(name,email);
 
-    }
-    editData(){
-        Data = "some new value";
-    }
-}
+//     }
+//     editData(){
+//         Data = "some new value";
+//     }
+// }
 
-let student1= new User("saikat", "saikat@gmail.com");
-let student2= new User("tonoy", "tonoy@gmail.com");
-let teacher1 = new User("dean", "dean@gmail.com");
-let Admin1 = new Admin("admin", "admin@gmail.com")
+// let student1= new User("saikat", "saikat@gmail.com");
+// let student2= new User("tonoy", "tonoy@gmail.com");
+// let teacher1 = new User("dean", "dean@gmail.com");
+// let Admin1 = new Admin("admin", "admin@gmail.com")
 // in the console you can write sutdent1  and student1.viewdata(); it will show information.
+//For the given array with marks of students [85,97,44,37,76,60]  find the avarage marks of the entire class
+// let marks = [85,97,44,37,76,60];
+
+// let sum = 0;
+// for( let val of marks){
+//    sum +=val;
+// }
+// let avg = sum / marks.length;
+// console.log(`total marks of the entire class is= ${avg}`);
+
+// For a given array with prices of 5 items [250,645,300,900,50]   all items have an offer of 10% off on them. Change the array to store final price after applying offer.
+let items = [ 250,645,300,900,50];
+
+for(let i = 0; i<items.length; i++) {
+    let offer = items[i] /10;
+    items[i] -= offer;
+}
+console.log(items);
