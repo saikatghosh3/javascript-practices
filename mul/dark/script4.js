@@ -135,10 +135,60 @@
 // console.log(`total marks of the entire class is= ${avg}`);
 
 // For a given array with prices of 5 items [250,645,300,900,50]   all items have an offer of 10% off on them. Change the array to store final price after applying offer.
-let items = [ 250,645,300,900,50];
+// let items = [ 250,645,300,900,50];
 
-for(let i = 0; i<items.length; i++) {
-    let offer = items[i] /10;
-    items[i] -= offer;
+// for(let i = 0; i<items.length; i++) {
+//     let offer = items[i] /10;
+//     items[i] -= offer;
+// }
+// console.log(items);
+
+//loops porblems
+// calculate the sum of 1 to 5
+// let sum = 0;
+// let n = 7;
+
+// for(i=0; i<=n;i++){
+// sum = sum + i;
+// } 
+// console.log("sum", sum);
+//Print all the even number between 100;
+// for(let num = 0; num <= 100; num++){
+//     if(num % 2 == 0){
+//         console.log("num =", num);
+//     }
+// }
+// Qs Create a game where start with any random game number. Ask the user guessing the game number untill the user enters correct value.
+// let number = 40;
+// let UserNum = prompt("Guess the number :");
+// while(UserNum != number){
+//     prompt("you've entered the wrong number Guess again :");
+// }
+// console.log("congratulation, you've entered the right number");
+
+// Get user to input a number using prompt("Enter a number") Check if the number is a multiple of 5 or not.
+// let num = prompt("Enter a number");
+// if ( num %5 == 0){
+//     console.log("It is multiple of 5")
+// }else{
+//     console.log("It is not the multiple of 5")
+// }
+
+//Write a code which can give grades to student according to their scores:
+// 90-100:A
+// 70-89:B
+// 60-69:C
+// 50-59:D
+// 0-49: E
+let num = 67;
+if(num >=90 && num <=100){
+ console.log("You have got A grade");
+}else if(num >=70 && num <=89){
+    console.log("you have got B grade");
+}else if(num >=60 && num <=69){
+    console.log("you have got C grade");
+}else if(num >=50 && num <=59){
+    console.log("you have got D grade");
+}else if(num >=0 && num <=49){
+    console.log("you have failed");
 }
-console.log(items);
