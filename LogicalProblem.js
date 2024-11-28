@@ -44,8 +44,28 @@
 
 //***  */ write a function that retuns the Factorial of a given number 
 
-function factorial(num){
-    if(num ===0 || num ===1)return 1;
-    return num * factorial( num -1);
-}
-console.log(factorial(5));
+// function factorial(num){
+//     if(num ===0 || num ===1)return 1;
+//     return num * factorial( num -1);
+// }
+// console.log(factorial(5));
+
+// *** write a function that checks the given strng is palindrome
+// palindrome, word, number, sentence, or verse that reads the same backward or forward.
+// function isPalindrome(str){
+//     let reversed = str.split('').reverse().join('');
+//     return str === reversed;
+// }
+// console.log(isPalindrome("geek"));
+// console.log(isPalindrome("racecar"));
+
+// ********find the longest word in the sentence ************
+// function longestWord(sentence) {
+//     return sentence.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, "");
+// }
+
+// console.log(longestWord("I love JavaScript programming"));  // Output: "programming"
+
+// 
+
+//****************** */ Capitalize the First Letter of Each Word****************
