@@ -35,4 +35,34 @@ const shape = {
   
   console.log(shape.diameter()); // Output: 20
   console.log(shape.perimeter()); // Output: 62.83185307179586
-  
+
+
+  let c = { greeting: "Hey!" };
+let d;
+
+d = c;
+c.greeting = "Hello";
+console.log(d.greeting);
+
+// the output will be hello
+let a = 3;
+let b = new Number(3);
+let c = 3;
+
+console.log(a == b);
+console.log(a === b);
+console.log(b === c);
+
+//  correct answer will be C: true false false
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const member = new Person("Lydia", "Hallie");
+Person.getFullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+console.log(member.getFullName());
+  // It will throw a type error. 
