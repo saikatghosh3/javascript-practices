@@ -222,3 +222,56 @@
 // sayHi.bind(person, 21);
 
 // output will be Lydia is 21 and function will be returned because bind will return the function.
+
+// question21:
+// function sayHi() {
+//   return (() => 0)();
+// }
+
+// console.log(typeof sayHi());
+// output will be number because of IIFE function will be executed and it will return 0.
+// type of 0 is number.
+// type of null is Object
+// type of undefined is undefined
+// type of nan is Number
+// type of [] is Object
+// type of { } is Object
+// type of function(){} is function
+// type of ("") is String
+
+// question22:
+// console.log(typeof typeof 1);
+// output will be string because typeof 1 is number and typeof number is string.
+
+
+// question23:
+// const numbers = [1, 2, 3];
+// numbers[10] = 11;
+// console.log(numbers);
+// output will be [1, 2, 3, 7 x empty, 11] because of empty x 7 it will be printed.
+
+//question24:
+
+
+// const intervalId = setInterval(() => console.log("hi"), 1000);
+
+
+// clearInterval(intervalId);
+
+// output will be hi after every 1 second.
+// clearInterval will stop the interval 
+
+// question25:
+
+
+const firstPromise = new Promise((res, rej) => {
+  setTimeout(res, 500, "one");
+});
+
+const secondPromise = new Promise((res, rej) => {
+  setTimeout(res, 100, "two");
+});
+
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+
+// output will be two because of promise.race it will return the first resolved promise.
