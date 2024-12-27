@@ -264,14 +264,141 @@
 // question25:
 
 
-const firstPromise = new Promise((res, rej) => {
-  setTimeout(res, 500, "one");
-});
+// const firstPromise = new Promise((res, rej) => {
+//   setTimeout(res, 500, "one");
+// });
 
-const secondPromise = new Promise((res, rej) => {
-  setTimeout(res, 100, "two");
-});
+// const secondPromise = new Promise((res, rej) => {
+//   setTimeout(res, 100, "two");
+// });
 
-Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+// Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
 
 // output will be two because of promise.race it will return the first resolved promise.
+
+// question26:
+// const person = {
+//   name: "Lydia",
+//   age: 21
+// };
+
+// for (const item in person) {
+//   console.log(item);
+// }
+
+// output will be name age because of for in loop it will return the keys of the object.means porperties of the object.
+// if we want to get the values we can use for of Loop
+
+// question27:
+console.log(3 + 4 + "5");
+// output will be 75 because of left to right associativity. 3+4 will be 7 and 7+"5" will be "75"
+
+// question28:
+const num = parseInt("7*6", 10);
+log(num);
+// output will be 7 because parseInt will stop at the first non number character. 
+
+// question29:
+
+[1, 2, 3].map(num => {
+  if (typeof num === "number") return;
+  return num * 2;
+});
+
+// output will be [undefined, undefined, undefined] because of return statement it will return undefined.
+
+// question30:
+function getInfo(member, year) {
+  member.name = "Lydia";
+  year = 1998;
+}
+
+const person = { name: "Sarah" };
+const birthYear = "1997";
+
+getInfo(person, birthYear);
+
+console.log(person, birthYear);
+
+// output will be {name: "Lydia"} 1997 because of pass by reference and pass by value. object will be passed by reference and
+// primitive data types will be passed by value.
+
+//question31:
+function greeting() {
+  throw "Hello world!";
+}
+
+function sayHi() {
+  try {
+    const data = greeting();
+    console.log("It worked!", data);
+  } catch (e) {
+    console.log("Oh no an error!", e);
+  }
+}
+
+sayHi();
+
+// output will be oh no an error hello world because of throw statement it will throw the error. and
+//catch block will catch the error.
+
+function Car() {
+  this.make = "Lamborghini";
+  return { make: "Maserati" };
+}
+
+const myCar = new Car();
+console.log(myCar.make);
+
+// output will be Maserati because of return statement it will return the object.
+// if we use return statement in constructor it will return the object.
+
+// question33:
+(() => {
+  let x = (y = 10);
+})();
+
+console.log(typeof x);
+console.log(typeof y);
+ // output will be undefined number because of let x it will be block scoped and y will be global scoped.
+ // y will be defined in global scope.
+
+ //question34:
+ let counter = 10;
+export default counter;
+// index.js
+import myCounter from "./counter";
+
+myCounter += 1;
+
+console.log(myCounter);
+
+// output will be error because of default exprort it will be read only.
+
+// question35:
+const numbers = [1, 2, 3, 4, 5];
+const [y] = numbers;
+
+console.log(y);
+
+// output wii be 1 because of destructuring it will assign the first value to y.
+// if we want to get the rest of the values we can use rest operator.
+
+const user = { name: "Lydia", age: 21 };
+const admin = { admin: true, ...user };
+
+console.log(admin);
+// output will be {admin: ture, name: "Lydia", age" 21} because of spread operator it will spread the property of user to admin.
+
+// question37:
+const settings = {
+  username: "lydiahallie",
+  level: 19,
+  health: 90
+};
+
+const data = JSON.stringify(settings, ["level", "health"]);
+console.log(data);
+
+// output will be {"Level:19", "health": 90 } because of JSON.stringify it will only stringify the 
+// properties which are mentioned in the array
