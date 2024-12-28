@@ -402,3 +402,37 @@ console.log(data);
 
 // output will be {"Level:19", "health": 90 } because of JSON.stringify it will only stringify the 
 // properties which are mentioned in the array
+
+
+// question38:
+function sayHi() {
+  console.log(name);
+  console.log(age);
+  var name = "Lydia";
+  let age = 21;
+}
+
+sayHi();
+// output will be undefined and reference error because of hosting and temporal dead zone.
+
+// question39:
+let c = { greeting: "Hey!" };
+let d;
+
+d = c;
+c.greeting = "Hello";
+console.log(d.greeting);
+
+// output will be hello because of reference type it will be changed . 
+
+// question 40:
+Capturing > Target > Bubbling
+// this is the correct order of event porpagation.
+
+// There are three phases of even propagation:
+// Capturing Phase: Root → Parent → Child (Target)
+// Target Phase:    Target element
+// Bubbling Phase:  Child (Target) → Parent → Root
+
+// question41:
+
