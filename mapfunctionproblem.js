@@ -91,3 +91,55 @@
 
 // const emails = ['  JOHN.DOE@Example.com  ', 'jane@domain', 'valid.email@domain.com'];
 // console.log(validateEmails(emails));
+
+
+// ***************problems based on function****************
+
+//question1:
+// Write a function longestWord(sentence) that returns the longest word in a sentence.
+
+function longestWord(sentence) {
+    const words = sentence.split(' ');
+    let longest = '';
+    for (let word of words) {
+        if (word.length > longest.length) {
+            longest = word;
+        }
+    }
+    return longest;
+}
+
+// Example Usage
+console.log(longestWord("The quick brown fox jumps over the lazy dog")); 
+  
+
+//question2:
+//Write a curried function multiply(a)(b)(c) that multiplies three numbers.
+
+function multiply(a) {
+    return function(b) {
+        return function(c) {
+            return a * b * c;
+        }
+    }
+}
+
+console.log(multiply(2)(3)(4)); // 24
+
+//curried function is a function that takes multiple arguments one at a time.
+
+question3:
+// Write a function sum(a) that can sum any number of arguments using infinite currying.
+function sum(q){
+    return function (p){
+        if(b!== undefined){
+            return sum(q+p);
+        }
+        return p;
+    }
+}
+
+console.log(sum(1)(2)(3)(4)(5)()); // 15
+console.log(sum(1)(2)(3)()); // 6
+
+    
