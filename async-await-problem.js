@@ -72,16 +72,16 @@
 //Problem: Write an async function fetchData that fetches user data from a placeholder API (https://jsonplaceholder.typicode.com/users).
 //  Return the data in JSON format.
 
-async function fetchData(){
-    try{
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
-        const data = await response.json();
-        return data;
-    }catch (error){
-        console.log("Error fatching data:" , error);
+// async function fetchData(){
+//     try{
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//         const data = await response.json();
+//         return data;
+//     }catch (error){
+//         console.log("Error fatching data:" , error);
         
-    }
+//     }
     
-}
+// }
 
-fetchData().then(data => console.log(data));
+// fetchData().then(data => console.log(data));
