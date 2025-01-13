@@ -136,14 +136,27 @@
 // Create a custom promise that resolves after 2 seconds with a success message.
 
 
-function customPromise (){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve("success after 2 seconds");
-        }, 2000);
-    });
-};
+// function customPromise (){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve("success after 2 seconds");
+//         }, 2000);
+//     });
+// };
 
-customPromise()
-.then(message => console.log(message))
-.catch(error=> console.error(error));
+// customPromise()
+// .then(message => console.log(message))
+// .catch(error=> console.error(error));
+
+
+// Fetching Data with async / await 
+// write a function fetchData(url) that fetches data from the given url and logs data or error.
+async function fetchData (url) {
+    try{
+        const response = await fetch(url);
+        if(!response.ok){
+            throw new Error(`Error:, ${response.status}`);
+        }
+    }
+    
+}
