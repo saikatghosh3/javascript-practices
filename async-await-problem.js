@@ -85,3 +85,65 @@
 // }
 
 // fetchData().then(data => console.log(data));
+
+
+// some more problems
+
+// Write a function fetchData(url) that returns a 
+// promise to fetch data from the given URL and logs the data or error.
+
+// function fetchData(url) {
+//     return new Promise((resolve, reject) => {
+//         fetch(url)
+//             .then(response => {
+//                 if (response.ok) {
+//                     return response.json();
+//                 } else {
+//                     reject(`Error: ${response.status}`);
+//                 }
+//             })
+//             .then(data => resolve(data))
+//             .catch(error => reject(error));
+//     });
+// }
+
+
+// fetchData('https://jsonplaceholder.typicode.com/posts/1')
+//     .then(data => console.log(data))
+//     .catch(error => console.error(error));
+
+
+// Write a function that fetches data from multiple URLs simultaneously using Promise.all.
+
+// function fetchMultipleData (urls){
+//     const promises = urls.map(url => fetch(url).then(response=> response.jshon()));
+//     return Promise.all(promises);
+// }
+
+
+// const urls = [
+//     'https://jsonplaceholder.typicode.com/posts/1',
+//     'https://jsonplaceholder.typicode.com/posts/2',
+//     'https://jsonplaceholder.typicode.com/posts/3'  
+// ];
+
+// fetchMultipleData(urls)
+// .then(data=> console.log(data))
+// .catch(error => console.error( 'Error:', error));
+
+
+
+// Create a custom promise that resolves after 2 seconds with a success message.
+
+
+function customPromise (){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve("success after 2 seconds");
+        }, 2000);
+    });
+};
+
+customPromise()
+.then(message => console.log(message))
+.catch(error=> console.error(error));
