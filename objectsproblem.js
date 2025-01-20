@@ -83,3 +83,23 @@
 //  const obj = {a:1, b:2, c:3};
 //  console.log(reverseObject(obj));
  
+
+// now i will try to solve some variable and string problems with solutions 
+
+
+// problems: Write a function that takes a string and returns the reversed version of it.
+// function reverseString(str){
+//     return str.split("").reverse().join("");
+// }
+
+// console.log(reverseString("hello"));
+
+// problems: write a function to check if a given string is palindrome (reads the same backward as forward)
+
+function isPalindrome(str){
+    const reversed = str.split("").revese().join("")
+    return str === reversed;
+}
+
+console.log(isPalindrome("hello"));
+console.log(isPalindrome("racecar"));
