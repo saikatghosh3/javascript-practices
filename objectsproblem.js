@@ -96,10 +96,39 @@
 
 // problems: write a function to check if a given string is palindrome (reads the same backward as forward)
 
-function isPalindrome(str){
-    const reversed = str.split("").revese().join("")
-    return str === reversed;
-}
+// function isPalindrome(str){
+//     const reversed = str.split("").revese().join("")
+//     return str === reversed;
+// }
 
-console.log(isPalindrome("hello"));
-console.log(isPalindrome("racecar"));
+// console.log(isPalindrome("hello"));
+// console.log(isPalindrome("racecar"));
+
+// Write a function that counts the number of vowels in a given string.
+
+function countVowels (str){
+ const vowels = "aeiouAEIOU";
+ let count = 0;
+ for (let char of str){
+    if (vowels.includes(char)){
+        count ++;
+    }
+ }
+ return count;
+
+
+}
+console.log(countVowels("hello world"));
+
+ // Write a function that counts how many times a specific character appears in a string.
+
+ function countCharacter(str, char){
+ let count = 0;
+ for (let c of str){
+    if(c === char){
+        count ++;
+    }
+ }
+ return count;
+ }
+ console.log(countCharacter("Hello world" ,"o"));
