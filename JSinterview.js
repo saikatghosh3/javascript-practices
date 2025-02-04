@@ -28,3 +28,18 @@ function test() {
   }
   console.log(test().message);
   
+  // what is difference between null and undefiend?
+
+  // null:Explicit absecnt of value type is object. example: let e = null.
+  // undefined: variable decleared but value is not assigned. type is object. let x ; console.log(x);
+
+  // Explain how map , filter , reduce work 
+  // map: transform each element in array 
+  let numbers = [1,2,3,4];
+  let double = numbers.map(n=> n * 2);
+  console.log(double);
+
+  // returns a new array with elemensts that satisfy a condition
+  const nums = [1,2,3,4,5,6];
+  const even = nums.filter(n => n% 2 === 0);
+  console.log(even);
