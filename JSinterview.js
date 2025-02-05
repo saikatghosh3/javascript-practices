@@ -33,7 +33,7 @@ function test() {
   // null:Explicit absecnt of value type is object. example: let e = null.
   // undefined: variable decleared but value is not assigned. type is object. let x ; console.log(x);
 
-  // Explain how map , filter , reduce work 
+  // Explain how map , filter  work 
   // map: transform each element in array 
   let numbers = [1,2,3,4];
   let double = numbers.map(n=> n * 2);
@@ -43,3 +43,36 @@ function test() {
   const nums = [1,2,3,4,5,6];
   const even = nums.filter(n => n% 2 === 0);
   console.log(even);
+
+
+  // what will be a output of setinterval inside loop 
+
+  for (var i = 0; i < 3; i++ ){
+    setTimeout(() => {
+      console.log(i)
+    }, 3000 );
+  }
+
+  // Since var is function-scoped, i is shared across all iterations. After the loop, i = 3,
+  //  so all setTimeout callbacks print 3.
+
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1000);
+  }
+  // Now, i is block-scoped, so each iteration has its own i, producing:
+
+
+
+  // what will be output of setimeout +promise 
+
+  console.log("start");
+  setTimeout(()=> console.log("Timeout"),0);
+  Promise.resolve().then(()=> console.log("promise"));
+  console.log("end");
+
+//   "Start" logs.
+// setTimeout is sent to Web API.
+// Promise is added to Microtask Queue.
+// "End" logs.
+// Microtasks (Promises) execute before setTimeout, so "Promise" logs.
+// Finally, "Timeout" logs.
