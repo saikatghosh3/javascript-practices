@@ -151,12 +151,12 @@
 
 // Fetching Data with async / await 
 // write a function fetchData(url) that fetches data from the given url and logs data or error.
-async function fetchData (url) {
-    try{
-        const response = await fetch(url);
-        if(!response.ok){
-            throw new Error(`Error:, ${response.status}`);
-        }
-    }
+// async function fetchData (url) {
+//     try{
+//         const response = await fetch(url);
+//         if(!response.ok){
+//             throw new Error(`Error:, ${response.status}`);
+//         }
+//     }
     
-}
+// }
