@@ -106,29 +106,96 @@
 
 // Write a function that counts the number of vowels in a given string.
 
-function countVowels (str){
- const vowels = "aeiouAEIOU";
- let count = 0;
- for (let char of str){
-    if (vowels.includes(char)){
-        count ++;
-    }
- }
- return count;
+// function countVowels (str){
+//  const vowels = "aeiouAEIOU";
+//  let count = 0;
+//  for (let char of str){
+//     if (vowels.includes(char)){
+//         count ++;
+//     }
+//  }
+//  return count;
 
 
-}
-console.log(countVowels("hello world"));
+// }
+// console.log(countVowels("hello world"));
 
  // Write a function that counts how many times a specific character appears in a string.
 
- function countCharacter(str, char){
- let count = 0;
- for (let c of str){
-    if(c === char){
-        count ++;
+//  function countCharacter(str, char){
+//  let count = 0;
+//  for (let c of str){
+//     if(c === char){
+//         count ++;
+//     }
+//  }
+//  return count;
+//  }
+//  console.log(countCharacter("Hello world" ,"o"));
+
+// ************************************ concept************************
+
+// class and  object concept in detail
+
+
+// const empolyee = {
+//     calTax(){
+//         console.log("tax reate is 10%")
+//     },
+// };
+
+// const saikat = {
+//     salary: 50000, 
+// };
+// const saikat1 = {
+//     salary: 50000, 
+// };
+// const saikat2 = {
+//     salary: 50000, 
+// };
+// const saikat3 = {
+//     salary: 50000, 
+// };
+
+// in this way we can  access the empolyee object function by setting prototype
+
+// saikat.__proto__= empolyee;
+// saikat1.__proto__= empolyee;
+// saikat2.__proto__= empolyee;
+// saikat3.__proto__= empolyee;
+
+
+// if object and prototype have same method, then objects's 
+// method will used
+// Object r prototype a same function thakle age object er function show korbe. 
+
+
+
+// class consept: 
+
+class ToyotaCar {
+    start (){
+        console.log("start")
     }
+
+    stop(){
+        console.log("stop")
+    }
+}
+
+// class akta mold (saach) er moto . aktar moto kore onekgula ready korte hole bebohar kora hoi 
+
+let fortuner = new ToyotaCar()
+let lexus = new ToyotaCar()
+
+// closure example: 
+
+// data hiding 
+function counter (){
+ let count = 0;
+ return function () {
+    count ++;
+    console.log(count)
  }
- return count;
- }
- console.log(countCharacter("Hello world" ,"o"));
+}
+const myClosure= counter(); 
