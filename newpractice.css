@@ -1,0 +1,14 @@
+/* 
+box-sizing content-box means it will take extra space for margin padding , content although 
+we mention height and width 
+but box-sizing border-box means it will not take extra space. it will manage inside given height and  */
+
+/* position:  */
+
+/* by default position static thake mane top bottom left right  .  */
+
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
