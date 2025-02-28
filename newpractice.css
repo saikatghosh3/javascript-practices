@@ -7,8 +7,82 @@ but box-sizing border-box means it will not take extra space. it will manage ins
 
 /* by default position static thake mane top bottom left right  .  */
 
+/* position relative mane tar opor top, bottom , left right, z-index  lagano jabe */
+
+/* position absolute nearest ancestor  anusare change hoi..  */
+
+/* for example : if we change the box 1 position absolute and top 0. it will go above the parent div and change it's positions
+but if we set position absolute  to parnet then box 1 will follow it.  */
+
+ /* when we set position fixed. it will stay fix even though we scroll. */
+ /* when position is sticky , it will remain sticky  example: nav bar   */
+
+ /* Note: ***** */
+ /* transform  ,filter , or perspective properties can also make an element appear as positioned.  */
+
+ /* now imagine inside child we've set position absolute and in the parent if we set following property, it will act same  */
+/* 
+  instead of position: relative  we can set  ::::
+ translate: transform("0");
+ filter: invert(0); */
+
+
+
 *{
     margin: 0;
     padding: 0 ;
     box-sizing: border-box;
+}
+
+.parent{
+    padding: 43px;
+    margin: 34px;
+    border: 3px solid purple;
+    /* position: absolute; */
+}
+
+.box1{background-color: aqua;
+
+   position: sticky;
+   top: 0;
+   height: 111px;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+
+
+        }
+
+.box2{background-color: blue;
+        /* position: relative;
+
+        top: -55px;
+        left: 65px; */
+   
+    }
+
+.box3{background-color: red;
+    /* position: absolute;
+    top: 0; */
+      
+
+}
+
+.box4{background-color: violet;
+   /* position: fixed; */
+ 
+
+     
+    }
+
+.box5{background-color: yellow;
+
+}
+
+.box{
+    height: 233px;
+    width: 80vh;
+    padding: 3px;
+    border: 2px solid black;
+
 }
