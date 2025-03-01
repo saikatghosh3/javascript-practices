@@ -34,55 +34,136 @@ but if we set position absolute  to parnet then box 1 will follow it.  */
     box-sizing: border-box;
 }
 
-.parent{
+/* .parent{
     padding: 43px;
     margin: 34px;
     border: 3px solid purple;
     /* position: absolute; */
-}
+/* } */
 
-.box1{background-color: aqua;
+/* .box1{background-color: aqua;
 
    position: sticky;
    top: 0;
    height: 111px;
    width: 100%;
    margin: 0;
-   padding: 0;
+   padding: 0; */
 
 
-        }
-
+        /* } */
+/* 
 .box2{background-color: blue;
         /* position: relative;
 
         top: -55px;
         left: 65px; */
    
-    }
-
+    /* } 
+/* 
 .box3{background-color: red;
     /* position: absolute;
     top: 0; */
       
 
-}
+/* } */
 
-.box4{background-color: violet;
+/* .box4{background-color: violet;
    /* position: fixed; */
  
 
      
-    }
+    /* } */ 
 
-.box5{background-color: yellow;
+/* .box5{background-color: yellow;
 
-}
-
+} */
+/* 
 .box{
     height: 233px;
     width: 80vh;
     padding: 3px;
     border: 2px solid black;
 
+}  */
+
+
+/* display tutorial  */
+
+/* .box{
+    border: 2px solid blue;
+    /* display: inline; */
+    /* display: inline-block;
+    padding: 45px; */
+/* } */
+
+/* Property	      Behavior	                                                      New Line  	Width & Height	 Example Elements
+block	        Takes up full width, starts on a new line, and stacks vertically.	Yes	       Yes	             <div>, <p>, <h1>
+inline	        Takes up only necessary width, stays on the same line.	            No	       No	             <span>, <a>, <strong>
+inline-block	Stays on the same line, but can have width and height set.       	No	       Yes	             <button>, <img>, <input>  */
+
+
+/* 2 more properties */
+
+/* display : none (space lost hoiye jai) */
+/* visibility : hidden; (content hariye jai but space theke jai. mane : height, width theke jai) */  
+
+
+/* box shadow property:  */
+
+/* syntax */
+/* box-shadow: h-offset v-offset blur spread color inset;
+inset: Makes the shadow go inside the element instead of outside (optional). */
+.shadow{
+    height: 400px;
+    width: 400px;
+    border: 1px solid red ;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5) ;
+    
+
 }
+/* 
+Drop-shadow is most commonly used with images or in the context of SVG elements.
+we specially use it for image and svg. 
+It is a filter that adds a shadow behind an image or an element,
+ giving the illusion of a "drop shadow." */
+
+ /* img {
+    width: 300px;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+  }
+   */
+
+
+
+   /* difference between px, em , rem , vh ,vw  */
+
+   /* .box{
+    width: px; (fixed pixels can't be responsive)
+    vw ( determines the % of veiwport width)
+    height: vh; same as vw
+
+    rem: 1 rem = 16px
+    rem stands for "root em". It is relative to the root element (<html>). 
+    1 rem equals the font size of the root element, which is typically 16px by default.
+
+
+    html {
+        font-size: 16px; 
+      }
+       */
+      /* div {
+        font-size: 2rem; 
+      }
+       */
+
+    /* em is relative to the parent element's font size, not the root element.
+    div {
+        font-size: 16px;
+      }
+      
+      p {
+        font-size: 1.5em; /* 1.5 * 16px = 24px */
+      /* } */
+      
+   /* } */
