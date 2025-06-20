@@ -101,3 +101,22 @@ showWithArrowTimeout: function () {
 
 // console.log(0 === -0);           // true
 // console.log(Object.is(0, -0));   // false
+
+
+// 
+
+for(let  i = 1; i<=10; i++){
+  if (i===5){
+    console.log("breaking the loop at ", i)
+    break; 
+  }
+  console.log(i);
+}
+
+for (i =1; i<=10; i++){
+  if(i=== 5){
+    console.log("skipping  at ", i);
+     continue; 
+  }
+  console.log(i);
+}

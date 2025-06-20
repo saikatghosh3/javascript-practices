@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+grid Line: sob gula line e ak ak ta grid line
+grid cell: akta square er moto jaiga k grid cell bole
+grid track : dui line er majahe all  space (puro jaiga ) k grid track bole.
+grid area: akta portion nea tar majher area ke grid area bole.
+
+
+.container {
+    border: 2px solid black;
+    /* if we need only two column then we right below property  */
+    grid-template-columns: 120px 100px;
+}
+
+.item{
+    border: 2px solid red;
+    height: 55px;
+    width: 55px;
+}
+
+
+
+
+
+

@@ -234,7 +234,9 @@
 
     // *******
 
-    // spread operator : The spread operator (...) is a powerful feature that allows you to expand elements of an array , object, or iterable into individual elements .
+    // spread operator : The spread operator (...) is a powerful feature
+    //  that allows you to expand elements of an array , object, or iterable into 
+    // individual elements .
     // example: 
     // const arr1 = [1,3,4];
     // const arr2 = [...arr1, 76,8];
