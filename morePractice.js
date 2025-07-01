@@ -95,3 +95,54 @@ function Capitalize(str){
     // str.slice(1) will return rest of the str
 }
 console.log(Capitalize("hello world"));
+
+
+
+// compare two array is equal.
+
+function arraysEqual(a,b){
+    if (a.length !== b.length) return false;
+   
+    for(let i = 0; i<a.length; i++){
+        if (a[i] !== b[i]) return false;
+    }
+
+}
+return true;
+
+
+// Count occurrences of letter in a string 
+function countLetter(str, letter){
+    let count = 0;
+    for(let char of str){
+        if(char === letter ) count ++;
+    }
+    return count ;
+}
+
+console.log(countLetter("banana", "a"));
+
+
+// Find second Largest Number in array
+
+function secondLargest (arr){
+    const unique = [...new Set(arr)];
+    unique.sort((a,b)=>b-a);
+    return unique[1];
+}
+console.log(secondLargest([1,2,3,4,5,6,7,7,9,9,10]));
+
+
+// Find the Factorial of a Number 
+
+function Factorial(n){
+    if(n === 0 || n ===1) return 1;
+    return n * Factorial(n-1);
+}
+console.log(Factorial(5));
+
+// Get unique Character from a string
+function uniqueChar(str){
+    return [...new Set(str)].join(' ');
+}
+console.log(uniqueChar("aaaabbbccc"))
