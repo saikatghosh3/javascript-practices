@@ -104,3 +104,58 @@ myPromise
  getUsers();
 
  //  Sequential vs Parallel Async Calls
+
+ function delay (ms , value){
+  return new Promise (resolve => setTimeout(()=> resolve(value),ms));
+
+ }
+
+//  sequential  
+
+ async function runSequential(){
+  const a = await delay(1000, "A");
+  const b = await delay(1000, "B");
+  console.log(a,b);
+ }
+
+//  paraller
+
+async function runParaller() {
+  const [c,d] = await Promise.all([
+    delay(2000, "C"),
+    delay(2000, "D")
+  ])
+
+  
+}
+
+
+// Using promise.all for multiple api
+
+async function  getAllData() {
+  try{
+    const [posts, users] = await Promise.all([
+      fetch("https: //jshonplaceholder.typicode.com/posts").then(res=> res.json()),
+      fetch("https:// jshonplacehoder.typecode.com/users").then(res => res.json())
+           ]);
+           console.log("posts:", posts.length, "| Users: ", users.length);
+  }catch(err){
+    console.log("Error loading data:", err);
+  }
+}
+
+
+getAllData();
+
+// catch error in async function 
+
+async function failExample() {
+  try{
+    let res = await fetch("https//invalid.api");
+    let data = await res.json();
+    console.log(data);
+  } catch(err){
+    console.error("Error caught", err.message);
+  }
+}
+failExample();
