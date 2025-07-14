@@ -216,3 +216,73 @@ async function checkInternet() {
   }
 }
 checkInternet();
+
+//  Disable submit button until All inputs are filled. 
+// Only enable the button when all inputs have values 
+
+<html>
+<input id="name" placeholder="Name"/> <br/> 
+<input id="email" placeholder="Email"/> <br/> 
+<button id="submit" disabled> Submit</button>
+</html>
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const button = document.getElementById("submit");
+
+function checkInputs(){
+  if(nameInput.value && emailInput.value){
+    button.disabled = false;
+  } else{
+    button.disabled = true;
+  }
+}
+
+nameInput.addEventListener("input", checkInputs);
+emailInput.addEventListener("email", checkInputs);
+
+
+// Show loading while fetching data 
+
+ <p id="output">Loading... </p>
+
+ async function loadPost() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  const data = await res.json();
+  document.getElementById("output").innerText = data.title;
+ }
+ loadPost();
+
+//  Toggle dark mode 
+// clicking the button dark/light theme. 
+<button id="toggle">Toogle Theme </button>
+
+const btn = document.getElementById("toggle");
+
+btn.addEventListener("click", ()=>{
+  document.body.classList.toggle("dark");
+});
+
+<style>
+  .dark {
+    background: #111;
+    color: white;
+  }
+</style>
+
+// countdown Timer
+// create a 10 second coundown after clicking a button  
+
+<button id= "satrt"> Start countdown</button>
+<p id="timer"> 5</p>
+
+document.getElementById("start").addEventListener("click", ()=>{
+  let count = 5;
+  const timer = document.getElementById("timer");
+
+  const interVal = setInterval(()=>{
+    count--;
+    timer.innerText = count; 
+    if(count === 0) clearInterval(interVal);
+  },1000);
+});
