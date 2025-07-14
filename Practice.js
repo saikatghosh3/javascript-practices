@@ -159,3 +159,60 @@ async function failExample() {
   }
 }
 failExample();
+
+
+// race multiple promise 
+
+const fast = new Promise(resolve => setTimeout(()=> resolve("fast"),500));
+const slow = new Promise(resolve => setTimeout(()=> resolve("slow"),1000));
+
+Promise.race([fast, slow]).then(result => console.log(result));
+
+
+// Load multiple urs one by one (sequentially)
+const urls = [
+ "https://jsonplaceholder.typicode.com/posts/1",
+  "https://jsonplaceholder.typicode.com/posts/2",
+  "https://jsonplaceholder.typicode.com/posts/3",
+];
+
+async function  loadSequentially(urls) {
+  for (let url of urls){
+    const res = await fetch (url);
+    const data = await res.json(data);
+    console.log("Loaded:", data.title);
+  }
+}
+
+loadSequentially(urls);
+
+// Real case where you want one API to finish before calling the next 
+// (e.g., uploading files in order).
+
+// Parallel API calls with Error Hnadling
+
+async function  fetchData() {
+  const urls = [  "https://jsonplaceholder.typicode.com/posts/1",
+    "https://jsonplaceholder.typicode.com/posts/invalid", ]
+
+
+
+    const promises = urls.map(url=> fetch(url).then(res=> res.jshon()).catch(()=> "Error loading"));
+
+    const results = await Promise.all(promises);
+    console.log(results);
+}
+
+fetchData();
+
+// Check internet conneciton (real case)
+
+async function checkInternet() {
+  try {
+    await fetch("https://jsonplaceholder.typicode.com/posts/1", { method: "HEAD" });
+    console.log(" Online");
+  } catch {
+    console.log(" Offline");
+  }
+}
+checkInternet();
