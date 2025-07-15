@@ -286,3 +286,37 @@ document.getElementById("start").addEventListener("click", ()=>{
     if(count === 0) clearInterval(interVal);
   },1000);
 });
+
+
+//highligh input field on focus 
+// when the user clicks inside the input, change its border color.
+<input id="name" placeholder="Enter name" / >
+const input = document.getElementById("name");
+input.addEventListener("focus", ()=>{
+  input.style.border = "2px solid blue";
+});
+
+input.addEventListener("blur", ()=>{
+  input.style.border = "1px solid gray";
+})
+
+// convert textarea character to uppercase 
+
+<textarea id= "note" placeholder ="type here ...."></textarea>
+
+const textarea = document.getElementById("note");
+textarea.addEventListener("input", ()=>{
+  textarea.value = textarea.value.toUpperCase();
+});
+
+// show password toggle 
+{/* clicking checkbox toggles password visibility  */}
+
+input id = "pwd" type = "password" placeholder = "Enter password"/>
+<label><input type="checkbox" id ="showpwd"></input></label>
+const pwd = document.getElementById("pwd");
+const toggle = document.getElementById("showpwd") 
+
+toggle.addEventListener("change", ()=>{
+  pwd.type = toggle.checked ? "text" : "password";
+});
