@@ -143,3 +143,33 @@ console.log(p.#secret); // this line is not possible due to private
     myTea.makeTea();
 
     myTea.#boilWater();  // this one will give error. because of abstruction , it is private and can't change or access it
+
+
+    // Employee management system (Inheritance and encapsulation)
+
+
+    class Employee {
+        constructor(name, salary){
+            this.name = name;
+            this._salary;
+        }
+        getSalary(){
+            return this._salary;
+        }
+    }
+
+    class Manager extends Employee{
+        constructor(name, salary, bonus){
+            super(name, salary)
+            this.bonus = bonus;
+        }
+        getSalary(){
+            return this._salary + this.bonus;
+        }
+    }
+
+    const emp1 = new Employee("John", 3000);
+const mgr1 = new Manager("Saikat", 5000, 1000);
+
+console.log(emp1.getSalary()); 
+console.log(mgr1.getSalary());
