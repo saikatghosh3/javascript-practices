@@ -196,3 +196,39 @@ console.log(u1.login("12345"));
 u1.changePassword("wrong", "67890");
 u1.changePassword("12345", "67890");
 console.log(u1.login("67890")); 
+
+//Inventory system for products 
+
+// class product(name, quantity)
+// method addStock(n) removeStock(n)  getStock()
+
+
+class Product {
+    constructor(name, quantity){
+        this.name = name;
+        this.quantity = quantity
+    }
+    addStock(n){
+        this.quantity +=n;
+        console.log(`${n} units added to ${this.name}`);
+    }
+    removeStock(n){
+        if(n> this.quantity){
+            console.log(`Not enough stock to remove ${n}`);
+
+        } else{
+            this.quantity -= n;
+            console.log(`${n} units remove from ${this.name}`)
+        }
+    }
+    getStock(){
+        console.log(`current stock of ${this.name}: ${this.quantity}`)
+    }
+}
+const item = new Product("Mouse", 10);
+
+item.getStock();        
+item.addStock(5);      
+item.removeStock(12);   
+item.removeStock(5);    
+item.getStock();  
