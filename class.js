@@ -232,3 +232,75 @@ item.addStock(5);
 item.removeStock(12);   
 item.removeStock(5);    
 item.getStock();  
+
+// object related problem:
+
+
+// Write a function that takes an object and retuns how many keys (properties it has)
+
+function hasKeys(obj){
+    return Object.keys(obj).length;
+}
+
+const person = {name: "saikat", age: 25, job: "developer"};
+console.log(CountProperties(person));
+
+// write a function that checks if a key exists in the object
+
+function hasPoroperty(obj, key){
+    return obj.hasOwnProperty(key);
+}
+const student = { name: "Raju", roll: 12 };
+console.log(hasPoroperty(student, "name")); // true
+console.log(hasPoroperty(student, "grade")); // false
+
+// write a function that sums all numeric values in a given object. 
+
+function sumValues (obj){
+    let sum = 0;
+    for (let key in obj){
+        if(typeof obj[key] === 'number'){
+            sum += obj[key];
+        }
+    }
+    return sum;
+}
+const marks  = {math: 85, science : 90, name : "Mina"};
+console.log(sumValues(marks));
+
+// here obj[key] is the way of accessing (value ) as it is the unknown obj. 
+
+// if we know the obj then the above code will be  which is really basic way. 
+
+
+const marks1 = { math: 85, science: 90, name: "Tina" };
+function sumValues(obj) {
+  return obj.math + obj.science; // directly accessing known keys
+}
+
+
+console.log(sumValues(marks1)); // 175
+
+
+// now write a function to remove a given key from the object and return updated object.
+
+function removeKey (obj, key){
+    delete obj[key];
+    return obj;
+}
+
+const car = { brand: "Toyota", model: "Corolla", year: 2020 };
+console.log(removeKey(car, "year")); 
+
+
+// basic one :  
+// To know how many keys are inside Object 
+const obj = {
+    name: "saikat", 
+    age: 25, 
+    job: "fontend developer", 
+    address: "Dhaka, Bangladesh"
+}
+
+console.log(Object.keys(obj)); 
+console.log(Object.keys(obj).length); 
