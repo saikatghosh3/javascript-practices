@@ -282,6 +282,25 @@ function sumValues(obj) {
 console.log(sumValues(marks1)); // 175
 
 
+
+// return a new object containing only string values 
+
+function filterString(obj) {
+    let result = {};
+    for (let key in obj) {
+        if (typeof obj[key] === 'string') {
+            result[key] = obj[key];
+        }
+    }
+    return result;
+}
+
+const mix = { name: "Ana", age: 22, city: "Dhaka", active: true };
+console.log(filterString(mix));  
+// ✅ Output: { name: 'Ana', city: 'Dhaka' }
+
+
+
 // now write a function to remove a given key from the object and return updated object.
 
 function removeKey (obj, key){
@@ -304,3 +323,61 @@ const obj = {
 
 console.log(Object.keys(obj)); 
 console.log(Object.keys(obj).length); 
+
+
+// write a function to merge two objects into one. 
+
+function mergeObject(obj1, obj2){
+    return {...obj1,...obj2};
+}
+const a = {name: "saikat", age: 25};
+const b = {job: "Developer", address: "Dhaka"};
+console.log(mergeObject(a,b));
+
+
+// question: 
+// const userStatus = {
+//   isLoggedIn: true,
+//   isAdmin: false,
+//   hasVerifiedEmail: true,
+//   isBanned: false
+// };
+
+// filterTrue(userStatus); 
+// ➜ ["isLoggedIn", "hasVerifiedEmail"]
+
+
+function filterTrue (obj){
+    let result = [];
+    for(let key in obj){
+        if (obj[key] === true){
+            result.push(key);// this is why we are storing value inside array, 
+            // if we need key and value also then the last line will be 
+             result.push({ [key]: obj[key] });
+        }
+    }
+    return result; 
+}
+
+const userStatus = {
+  isLoggedIn: true,
+  isAdmin: false,
+  hasVerifiedEmail: true,
+  isBanned: false
+};
+
+console.log(filterTrue(userStatus));
+
+
+
+// write a function that takes an object and returns a new object where the keys and values are swapped.
+function swapKeyValue  (obj){
+    let swapped = {};
+    for ( let key in obj){
+       swapped[ obj[key] ]= key
+    }
+    return swapped;
+}
+
+const original = { a: "apple", b: "banana" };
+console.log(swapKeyValue(original));
