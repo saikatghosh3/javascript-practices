@@ -412,7 +412,7 @@ const entries = [
 const obj = Object.fromEntries(entries);
 console.log(obj);
 
-// using for loop 
+//3. using for loop 
 
 const arr = ["apple", "orrange", "pineApple"]
 let obj = {};
