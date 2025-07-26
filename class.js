@@ -381,3 +381,43 @@ function swapKeyValue  (obj){
 
 const original = { a: "apple", b: "banana" };
 console.log(swapKeyValue(original));
+
+
+// ****************** obj . key VS obj [key] **********************
+// Syntax         	When to Use
+
+// obj.key      	When you know the key (fixed)
+
+// obj[key]	    When the key is stored in a variable
+
+
+
+// some method to convert array to obj 
+
+// 1. using Object.assign() simple index-based keys 
+
+const arr = [ "a", "b", "c"];
+const obj = Object.assign({}, arr);
+
+console.log(obj);
+
+// 2. using  object.fromEntries()
+
+const entries = [
+  ["name", "Alice"],
+  ["age", 25],
+  ["city", "Dhaka"]
+];
+
+const obj = Object.fromEntries(entries);
+console.log(obj);
+
+// using for loop 
+
+const arr = ["apple", "orrange", "pineApple"]
+let obj = {};
+for (let i = 0; i<arr.length; i++){
+    obj[i] = arr[i]
+}
+
+console.log(obj);
