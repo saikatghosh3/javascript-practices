@@ -164,4 +164,33 @@ console.log(names);
 // [ 'Apple', 'Banana', 'Orange' ]
 
 
+// display items price over 1000;
 
+const products =[ ["Bag", 900],
+ ["shoes", 1200], 
+["watch", 1500]];
+
+for(let i= 0; i<products.length; i++){
+    const name = products[i][0];
+    const price = products[i][1];
+
+    if(price > 1000){
+        console.log(name);
+    }
+}
+
+// print string and number differently
+
+const mix = [
+    ["jhon", 28],
+    ["madmax", 31],
+    ["Bolod", 25],
+]
+
+for( let i = 0; i< mix.length; i++){
+  const name = mix[i][0];
+  const value = mix[i][1];
+
+   console.log(`Name : ${name} , Age: ${value}`);
+  
+}
