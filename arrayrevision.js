@@ -86,3 +86,82 @@ console.log(double);
 let names =["saikat", "ghosh", "Tonoy", "Babu"];
 names.push("sk");
 console.log(names);
+
+
+
+
+
+// New concept  *******************multidimentational array ********************************
+
+
+const arr = [
+    ["saikat" , 28, "jashore"],
+    ["Tonoy" , 25, "dhaka"],
+    ["jhon" , 31, "England"],
+]
+
+console.log(arr[0][2]);
+
+
+
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+for (let i = 0; i < matrix.length; i++) {
+  for (let j = 0; j < matrix[i].length; j++) {
+    console.log(matrix[i][j]);
+  }
+}
+
+
+***************** inside for loop  i is index *************************
+
+const array = ["apple", "banana", "orange"];
+
+for(let i = 0; i<array.length; i++){
+    console.log(`index: ${i}`);
+    console.log(`value: ${array[i]}`);
+}
+
+// important
+// why <array.length   why not   <= array.length   ?
+
+
+// length = 1,2,3
+// and index is 0,1,2
+//  so if we want to iterate over whole array  we should write <arr.length  
+
+
+
+// some problem solving 
+
+// print the name of every item 
+const items = [
+  ["Apple", 120],
+  ["Banana", 60],
+  ["Orange", 100]
+];
+
+
+for (let i = 0; i < items.length; i++) {
+  console.log(`name: ${items[i][0]}`);
+}
+
+
+// or for each  
+items.forEach(item=> {
+    console.log(`name: ${item[0]}`);
+})
+
+// if we want to make new array with name then the code will be 
+
+
+const names = items.map(item => item[0]);
+console.log(names);
+
+// [ 'Apple', 'Banana', 'Orange' ]
+
+
+
