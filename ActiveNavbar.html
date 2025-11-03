@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active-navbar-design</title>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        .container{
+            max-width: 1200px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        header{
+            background-color: black;
+        }
+        #main-menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #main-menu a{
+            color: #fff;
+            padding: 10px 15px;
+            text-transform: capitalize;
+            font-size: 2rem;
+        }
+
+        #main-menu a::after{
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: red;
+            display: block;
+            transition: width .5s ease;
+        }
+
+        #main-menu a.active::after{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="main-menu">
+                <a href="#" class="active">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Blog</a>
+                <a href="#">Conatact</a>
+                <a href="#">Testimonal</a>
+            </div>
+        </div>
+    </header>
+
+   <script>
+    
+  const mainMenu = document.querySelector('#main-menu');
+
+  mainMenu.addEventListener('click', function (event) {
+
+    if (event.target.id === "main-menu") return;
+
+   
+    const currentActive = mainMenu.querySelector('.active');
+    if (currentActive) {
+      currentActive.classList.remove('active');
+    }
+
+  
+    event.target.classList.add('active');
+  });
+</script>
+</body>
+</html>
