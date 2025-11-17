@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice-code </title>
+</head>
+<body>
+    <script>
+    //    scoping practice
+    // here let is working as gloal scope 
+    function Random(){
+    let i ; 
+    for(i= 1; i<=10; i++){
+        console.log(i);
+        
+    }
+    console.log(i)
+    }
+    Random();
+
+    // antoher example 
+
+    let i; 
+    for(i= 1; i<10; i++){
+        console.log(i);
+    }
+    console.log(i);
+    // it will give same result as above 
+
+
+    // here var is working as functional scope
+     function Random(){
+    var i ; 
+    for(i= 1; i<=10; i++){
+        console.log(i);
+        
+    }
+    console.log(i)
+    }
+    Random();
+
+
+    // but in general  for loop 
+    for (let i = 10; i<=10; i++){
+        console.log(i);
+    }
+    console.log(i)
+    // the outer i will not execute due to block scope 
+
+    // but var will act differently 
+    for (var i = 1; i<=10; i++){
+        console.log(i);
+        
+    }
+    console.log(i);
+    // i will be 11 because the var loop increments after logging 10
+    console.info('after var loop, i =', i);
+
+    // if you need i to be 10 afterwards:
+    i -= 1;
+    console.info('adjusted i =', i);
+
+
+
+    // now calculator 
+
+    function calc(num1,operation, num2){
+//    num1 = num1 *1;
+//    num2 = num2 *1;
+// smart solution 
+num1 *= 1;
+num2 *= 1;
+
+   switch (operation){
+    case'+':
+    return num1 + num2;
+    case'-':
+    return num1 - num2;
+    case'*':
+    return num1 * num2;
+    case'/':
+    return num1 / num2;
+    default: 
+    console.log('Enter a valid operation');
+    return NaN;
+    
+   }
+
+    }
+    console.log (calc( 6 , '-' , 8));
+    console.log (calc( 8 , '*' , 10));
+    
+
+
+    
+    </script>
+</body>
+</html>
