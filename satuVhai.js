@@ -141,3 +141,387 @@ function findShortestWord(str) {
 console.log(findShortestWord("The quick brown fox jumps over the lazy dog"));
 console.log(findShortestWord("Hello world"));
 console.log(findShortestWord("Today is Monday"));
+
+
+// Suppose you are building a student database for your class that will track student’s names and their marks. Your class has 40 students but now you are seeing that there are 41 entries in your database so you decide to check the database. And you find out that you have mistakenly uploaded a student’s name twice.
+// Task
+//  Write a `removeDuplicates` function that takes in an array of names and returns a new array with any duplicates removed.
+// Sample Input:
+// Student_names = [‘Zara’, ‘Sadia’ , ‘Mahin’ , ‘Adnan’ , ‘Maisha’, ‘Adnan’, ‘Faiyaz’]
+// Sample Output :
+// Student_names = [‘Zara’, ‘Sadia’ , ‘Mahin’ , ‘Adnan’ , ‘Maisha’, ‘Faiyaz’]
+
+function removeDuplicates(names) {
+    const uniqueNames = [];
+    for (let i = 0; i < names.length; i++) {
+        if (!uniqueNames.includes(names[i])) {
+            uniqueNames.push(names[i]);
+        }
+    }
+    return uniqueNames; 
+}
+
+const Student_names = ['Zara', 'Sadia', 'Mahin', 'Adnan', 'Maisha', 'Adnan', 'Faiyaz'];
+const uniqueStudentNames = removeDuplicates(Student_names);
+console.log(uniqueStudentNames);
+
+
+// another way 
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+console.log(removeDuplicates(['Zara', 'Sadia', 'Mahin', 'Adnan', 'Maisha', 'Adnan', 'Faiyaz']));
+
+
+
+// Write a function `createBookList` that takes in three parameters: `bookTitles`, an array of book titles, `authorNames`, an array of corresponding author names and ‘number of copies available’ , an array of corresponding copies available for the book.
+// Write a function ‘Add Copies’ that takes two parameters : `bookTitle` and the number of copies you are adding to that book. The function should add copies to that particular book.
+// Write a function ‘Sell Book’ that takes two parameters : `bookTitle` and the number of copies you are selling of that book. The function should deduct copies of that particular book.
+// Write a function ‘GetDetails’ that takes no parameters and returns all the titles of the book in the bookTitles array ,the author names of the book in the `authorNames’ array and the number of copies available of the corresponding books, which should be updated after adding or selling a book.
+// .
+// Sample Input:
+// createBookList(‘Bohubrihi’ , ‘Humayun Ahmed’ , 10)
+// Add Copies(‘Bohubrihi’ , 5)
+// Updates number of copies available of Bohubrihi to 15)
+// ‘Sell Book’(‘Bohubrihi’ , 3)
+//  Updates number of copies available of Bohubrihi to 12)
+// ‘GetDetails’()
+//   Returns (“Bohubrihi” by “Humayun Ahmed” number of copies available 12)
+// Hint :Make 3 arrays of the same length.
+
+
+function createBookList(bookTitles, authorNames, copiesAvailable) {
+    this.bookTitles = bookTitles;
+    this.authorNames = authorNames;
+    this.copiesAvailable = copiesAvailable;
+
+    this.AddCopies = function(bookTitle, numberOfCopies) {
+        const index = this.bookTitles.indexOf(bookTitle);
+        if (index !== -1) {
+            this.copiesAvailable[index] += numberOfCopies;
+        }
+    };
+
+    this.SellBook = function(bookTitle, numberOfCopies) {
+        const index = this.bookTitles.indexOf(bookTitle);
+        if (index !== -1 && this.copiesAvailable[index] >= numberOfCopies) {
+            this.copiesAvailable[index] -= numberOfCopies;
+        }
+    };
+
+    this.GetDetails = function() {
+        const details = [];
+        for (let i = 0; i < this.bookTitles.length; i++) {
+            details.push(
+                `"${this.bookTitles[i]}" by "${this.authorNames[i]}" number of copies available ${this.copiesAvailable[i]}`
+            );
+        }
+        return details;
+    };
+}
+
+// Create the book list
+const myBookList = new createBookList(
+    ['Bohubrihi'],
+    ['Humayun Ahmed'],
+    [10]
+);
+
+myBookList.AddCopies('Bohubrihi', 5); 
+myBookList.SellBook('Bohubrihi', 3);
+
+console.log(myBookList.GetDetails());
+
+
+
+
+// Problem 9:
+// Write a Javascript Program that takes String as a parameter and checks if the parameters are number or text. If the parameters are numbers then it will return a summation of the numbers. If the parameters are not numbers then it will generate a text by concatenating the strings.
+// Sample Input:
+// parseString(“21” , “24’ , “40”)
+// parseString(“Hello” , “Alpha”)
+// parseString(“Summer” , “2022”)
+// Sample Output:
+// 85
+// Hello Alpha
+// Summer 2022
+
+
+function parseString(...args){
+    let sum = 0;
+    let text = '';
+    for (let i = 0; i<args.length; i++){
+        if(isNaN(args[i])){
+            text += args[i] + ' ';
+        } else {
+            sum += Number(args[i]);
+        }
+    }
+    return text.trim() || sum;
+}
+
+console.log(parseString("21" , "24" , "40"));
+console.log(parseString("Hello" , "Alpha"));
+console.log(parseString("Summer" , "2022"));    
+
+
+
+// Problem 10:
+// Given an array exists that has integers, write a function called "getPositiveNumbers" that takes the entire array as input and returns a new array containing only the positive numbers from the original array.
+// Sample Input : [2, -5, 10, -3, 8, -1, 0, 7]
+// Sample Output: [2, 10, 8, 7]
+function getPositiveNumbers(arr){
+    const positiveNumbers = [];
+    for (let i = 0; i<arr.length; i++){
+        if(arr[i]>0){
+            positiveNumbers.push(arr[i]);
+        }
+    }
+    return positiveNumbers;
+}
+
+console.log(getPositiveNumbers([2, -5, 10, -3, 8, -1, 0, 7]));
+
+
+
+// Write a function called "findMissingNumber" that takes an array of consecutive integers from 1 to n, with one number missing, and returns the missing number.
+// For example:
+// Input: [1, 2, 3, 5, 6, 7, 8]
+// Output: 4
+
+function findMissingNumber(arr) {
+
+    const n = arr.length + 1;
+    // 1 থেকে N পর্যন্ত সব সংখ্যার যোগফল = N * (N + 1) / 2
+    const expectedSum = (n * (n + 1)) / 2;
+    const actualSum = arr.reduce((acc, num) => acc + num, 0);
+    return expectedSum - actualSum; 
+}
+console.log(findMissingNumber([1, 2, 3, 5, 6, 7, 8]));
+
+
+
+// Problem 12:
+// Write a function called "getMaxProduct" that takes an array of integers as input and returns the maximum product that can be obtained by multiplying any two distinct elements from the array.
+// Sample Input: [2, 3, 5, 6, 7]
+// Sample Output: 42 (obtained by multiplying 6 and 7)
+
+function getMaxProduct(arr) {
+    let max1 = -Infinity;
+    let max2 = -Infinity;   
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max1) {
+            max2 = max1;
+            max1 = arr[i];
+        } else if (arr[i] > max2 && arr[i] !== max1) {
+            max2 = arr[i];
+        }
+    }
+    return max1 * max2;
+}
+console.log(getMaxProduct([2, 3, 5, 6, 7]));
+
+// or 
+
+function getMaxProduct(arr) {
+    
+    arr.sort((a, b) => b - a);
+
+   
+    return arr[0] * arr[1];
+}
+
+console.log(getMaxProduct([2, 3, 5, 6, 7]));
+
+
+// Problem 13:
+// Write a function called "findPrimeNumbers" that takes an array of positive integers as input and returns a new array containing only the prime numbers from the original array.
+// For example:
+// Input: [2, 3, 4, 5, 6, 7, 8, 9, 10]
+// Output: [2, 3, 5, 7]
+
+
+function isPrime(num){
+    if(num <=1) return false;
+    for (let i=2; i<= Math.sqrt(num); i++){
+        if(num % i === 0) return false;
+    }
+    return true;
+
+}
+function findPrimeNumbers(arr){
+    const primeNumbers = [];    
+    for (let i=0; i< arr.length; i++){
+        if(isPrime(arr[i])){
+            primeNumbers.push(arr[i]);
+        }
+    }
+    return primeNumbers;
+}
+console.log(findPrimeNumbers([2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+// Problem 14:
+// Write a program that prints a triangle asterisk (*). The number of rows in the triangle is determined by the user's input. Each row should contain a  string where the characters are repeated in a mirrored pattern.
+// For example, if the user inputs 5, the program should print:
+//       *
+//     ***
+//    ****
+//   *****
+//  ******
+
+function printTriangle(rows) {
+    for (let i = 1; i <= rows; i++) {
+        let spaces = ' '.repeat(rows - i);
+        let stars = '*'.repeat(i * 2 - 1);
+        console.log(spaces + stars);
+    }
+}
+
+printTriangle(5);
+
+
+
+// Problem 15:
+// Write a program that prints a triangle of palindromic strings. The number of rows in the triangle is determined by the user's input. Each row should contain a palindromic string where the characters are repeated in a mirrored pattern.
+// For example, if the user inputs 5, the program should print:
+//       1
+//     232
+//    34543
+//   4567654
+//  567898765
+
+
+
+function printPalindromicTriangle(rows) {
+    for (let i = 1; i <= rows; i++) {
+
+     
+        let spaces = " ".repeat(rows - i);
+
+      
+        let inc = "";
+        for (let j = i; j < i + i; j++) {
+            inc += j;
+        }
+
+       
+        let dec = "";
+        for (let j = i + i - 2; j >= i; j--) {
+            dec += j;
+        }
+
+        console.log(spaces + inc + dec);
+    }
+}
+
+printPalindromicTriangle(5);
+
+
+// Problem 16:
+// A Fibonacci number is a sequence of numbers in which each number is the sum of the two preceding ones, usually starting with 0 and 1. In mathematical terms, the Fibonacci sequence is defined as:
+// F(n) = F(n-1) + F(n-2) for n > 1
+// So, the Fibonacci sequence begins as follows: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, and so on. Each subsequent number in the sequence is the sum of the two preceding numbers. The Fibonacci sequence has numerous mathematical properties and applications in various fields, including mathematics, computer science, and nature.
+// Task 1:
+// Write a function called "fibonacciSequence" that takes a positive integer n as input and returns an array containing the first n numbers in the Fibonacci sequence.
+// Sample Input: 8
+// Sample Output: [0, 1, 1, 2, 3, 5, 8, 13]
+// Task 2: Write a function called "isFibonacciNumber" that takes a number as input and returns true if the number is a Fibonacci number, and false otherwise.
+// For example:
+// Input: 8
+// Output: true
+// Input: 10
+// Output: false
+
+
+function fibonacciSequence(n) {
+    const fibSeq = [0, 1];  
+    for (let i = 2; i < n; i++) {
+        fibSeq[i] = fibSeq[i - 1] + fibSeq[i - 2];
+    }
+    return fibSeq.slice(0, n);
+}
+console.log(fibonacciSequence(8));
+function isFibonacciNumber(num) {
+    if (num < 0) return false;  
+    let a = 0, b = 1;       
+    while (b < num) {
+        let temp = b;
+        b = a + b;
+        a = temp;
+    }
+    return b === num;
+}   
+console.log(isFibonacciNumber(8));
+console.log(isFibonacciNumber(10));
+
+
+
+// or 
+
+function fibonacciSequence(n) {
+    const result = [];
+
+    let a = 0, b = 1;
+    let count = 0;
+
+    while (count < n) {
+        result.push(a);
+        let next = a + b;
+        a = b;
+        b = next;
+        count++;
+    }
+
+    return result;
+}
+
+console.log(fibonacciSequence(8));
+
+
+
+
+
+// Problem 17:
+// Write a function called "findMedian" that takes an array of numbers as input and returns the median value of the numbers.
+// For example:
+// Input: [5, 2, 8, 1, 9]
+// Output: 5
+// Input: [4, 2, 7, 1, 9, 10]
+// Output: 5.5
+
+
+function findMedian(arr) {
+    arr.sort((a, b) => a - b);
+    const length = arr.length;
+    const mid = Math.floor(length / 2);
+
+    if (length % 2 === 0) {
+        return (arr[mid - 1] + arr[mid]) / 2;
+    } else {
+        return arr[mid];
+    }
+
+
+}console.log(findMedian([5, 2, 8, 1, 9]));
+console.log(findMedian([4, 2, 7, 1, 9, 10]));
+
+// Problem 18:
+// Write a function called ‘countCharacter’ that takes a string as parameters and returns an object with character count.
+// For Example:
+// Input: “Hello”
+// Output: {H:1, e:1, l: 2, o:1}
+
+
+function countCharacter(str) {
+    const charCount = {};       
+    for (let char of str) {
+        if (charCount[char]) {
+            charCount[char]++;
+        } else {
+            charCount[char] = 1;
+        }
+    }
+    return charCount;
+}
+console.log(countCharacter("Hello"));
