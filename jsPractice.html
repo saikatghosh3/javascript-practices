@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+// 1. Check if a number is even or odd.
+function CheckEvenOdd(num){
+    if(num %2 === 0){
+        console.log(`This is even number`)
+    }else
+    console.log(`This is odd`)
+}
+ CheckEvenOdd(33);
+
+
+
+// 2. Find the largest number in an array.
+
+// Example array: [1, 5, 2, 9, 3]
+
+function findLargest(arr){
+    return Math.max(...arr);
+}
+
+findLargest([1,5,2,9,3]);
+
+// Math.max direct array nei na tai spread operator use hoi 
+
+
+// 3. Reverse a given string.
+
+// Example: "hello" → "olleh"
+
+
+function reverseString(str){
+    return str.split('').reverse().join('')
+}
+console.log(reverseString('hello'));
+
+// 4. Count how many vowels are in a string.
+
+function countVowel(str){
+     
+    let count = 0;
+    let vowels = "aeiouAEIOU";
+
+    for(let i = 0; i< str.length; i++){
+        if(vowels.includes(str[i])){
+           count ++; 
+        }
+    }
+    return count;
+
+
+}
+
+console.log(countVowel("hello world"));
+
+
+
+// 5. Write a program to check if a number is prime.
+
+
+function isPrime(n){
+    if(num > 2 ) return false;
+    
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            return false;   
+        }
+    }
+     return true;
+}
+
+console.log(isPrime(7)); 
+console.log(isPrime(10)); 
+
+// So if we fail to find a divisor before sqrt,
+// we do not need to check beyond sqrt.
+
+// Now apply to prime logic
+
+// Check:
+// 2, 3, 4, 5, ..., sqrt(n)
+
+// If none divides the number:
+// ↪ Number has no factor pair
+// ↪ Means it is prime
+
+
+// 6. remove  all duplicate numbers in an array.
+
+function removeDuplicate(arr){
+    return [...new Set(arr)]
+}
+
+console.log(findDuplicate([1,2,2,3,3,4,4,5,6,7,7,8]));
+
+// [...new Set(arr)] → spread operator
+
+// ... (spread operator) use kore Set er values ke array te convert kora hoy
+
+// Karone, new Set() Set obj
+
+
+
+
+    </script>
+</body>
+</html>
