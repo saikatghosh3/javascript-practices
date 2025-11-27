@@ -113,6 +113,31 @@ console.log(findDuplicate([1,2,2,3,3,4,4,5,6,7,7,8]));
 
 
 
+// Merge two arrays and return a new array without duplicates.
+function MergeArrays(arr1, arr2){
+    return [...new Set([...arr1, ...arr2])];
+
+}
+console.log(MergeArrays([1,2,3],[3,4,5]));
+
+
+// Sort an array in ascending order.
+
+function sortArray(arr){
+    return arr.sort((a ,b)=> a - b);
+}
+ console.log(sortArray([3,45,5,6,7,8]));
+
+
+// Check if a string is a palindrome.
+function isPalindrome(str){
+    if(str.split('').reverse().join('') === str){
+        return true ;
+    }else return false;
+}
+
+console.log(isPalindrome("121223"));
+
 
     </script>
 </body>
