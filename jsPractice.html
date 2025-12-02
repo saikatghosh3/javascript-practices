@@ -220,6 +220,61 @@ console.log(CheckAnagram("121", '121'));
         return [...new Set(str)].join('');
     }
     console.log(removeDuplicateChar("saikatsghosh"));
+
+
+
+
+
+// async await and promise  set timeout practice 
+
+async function fetchData(){
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    const data = await res.json();
+    console.log(data);
+}
+
+
+
+function getUser(){
+    return new Promise((resolve, reject )=> {
+        setTimeout(()=>{
+            resolve ("Data loaded");
+        },2000)
+    })
+}
+
+getData()
+.then(result=> console.log(result))
+.catch(error => console.log(error));
+
+
+// call aplly bind 
+
+const person = {
+    name: "saikat", 
+};
+
+
+function greet (city, country){
+    console.log(`Hello ${this.name}from ${city}, ${country}`);
+    
+}
+
+// call:
+
+greet.call(person, "Dhaka", "Bangladesh");
+
+
+
+apply: 
+// apply invokes the function immediately and passes argument as an Array 
+
+greet.apply(person, ["Dhaka", "Bangladesh"]);
+
+// bind: bind does not run funciton immediately . It creates a new function with this permanently set. 
+
+const newFunc = greet.bind(person, "Dhaka", "Bangladesh");
+
     
     </script>
 </body>
