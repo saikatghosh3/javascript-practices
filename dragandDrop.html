@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+ body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1e293b;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drag-item {
+  width: 150px;
+  height: 120px;
+  background: tomato;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: grab;
+  user-select: none;
+  border-radius: 6px;
+}
+
+.drop-area {
+  flex: 1;
+  height: calc(100vh - 140px);
+  background: #dbeafe;
+  border: 2px dashed #333;
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  font-size: 18px;
+  align-items: flex-start;
+}
+
+/* Trash Box */
+.trash-box {
+   
+  width: 40%;
+  height: 120px;
+  background: #ef4444;
+  color: white;
+  border-top: 4px solid #7f1d1d;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trash-box.dragover {
+  background: #dc2626;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Sidebar Items</h2>
+
+    <div class="items-list" id="itemsArea">
+      <div id="item1" draggable="true" class="drag-item">Item 1</div>
+      <div id="item2" draggable="true" class="drag-item">Item 2</div>
+      <div id="item3" draggable="true" class="drag-item">Item 3</div>
+      <div id="item4" draggable="true" class="drag-item">Item 4</div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div style="flex: 1; display: flex; flex-direction: column;">
+
+    <div id="dropArea" class="drop-area">
+      Drop Here
+    </div>
+
+    <!-- TRASH BOX -->
+    <div id="trashBox" class="trash-box">Trash</div>
+
+  </div>
+
+
+   <div id="modal" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+">
+  <div style="
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 22px;
+  ">
+    <span id="modalText"></span>
+    <br><br>
+    <button onclick="closeModal()" style="
+      padding: 8px 16px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    ">Close</button>
+  </div>
+</div>
+
+
+</div>
+<script src="draganddrop.js"></script>
+
+</body>
+</html>
+
+
+
