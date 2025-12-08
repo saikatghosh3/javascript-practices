@@ -58,3 +58,89 @@ toggleBtn2.addEventListener('click', ()=>{
         passwordInput.type = "password";
     }
 })
+
+
+
+
+// add and delete 
+
+const addButton = document.getElementById("add-item");
+const inputText = document.getElementById("input-text");
+const list = document.getElementById("item-list");
+
+addButton.addEventListener("click", () => {
+    const newItem = document.createElement("li");
+
+    // Item text
+    const textSpan = document.createElement("span");
+    textSpan.innerText = inputText.value;
+
+    // Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "Delete";
+    deleteBtn.style.marginLeft = "10px";
+
+    // Delete functionality
+    deleteBtn.addEventListener("click", () => {
+        newItem.remove();
+    });
+
+    // Add text + delete button inside li
+    newItem.appendChild(textSpan);
+    newItem.appendChild(deleteBtn);
+
+    // Add li to the list
+    list.appendChild(newItem);
+
+    // Clear input
+    inputText.value = "";
+});
+
+
+
+
+// Change Image on Click
+const changeRealImage = document.getElementById("changeRealImage");
+ const changeImage = document.getElementById("changeImage");
+
+ changeImage.addEventListener("click",()=>{
+   
+    changeRealImage.src = "img2.jpg";
+ })
+        
+ 
+
+//  simple form valdiation
+
+  const form = document.getElementById('myForm');
+  const messageBox = document.getElementById('form-message');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+
+    
+    const inputs = form.querySelectorAll('input:not([type="button"]):not([type="submit"])');
+
+    let hasEmpty = false;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === '') {
+        hasEmpty = true;
+      
+        input.style.outline = '2px solid #ff4d4f';
+      } else {
+        input.style.outline = ''; 
+      }
+    });
+
+    messageBox.textContent = '';
+
+    if (hasEmpty) {
+      messageBox.textContent = 'Please fill all fields';
+      messageBox.style.color = 'red';
+    } else {
+      messageBox.textContent = 'Submitted successfully';
+      messageBox.style.color = 'green';
+
+    }
+  });

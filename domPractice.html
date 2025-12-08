@@ -60,6 +60,57 @@
     <div>
         <input type="text" id="passwordField" placeholder="Enter Password">
         <button id="togglePasswordBtn">Show/Hide Password</button>
+    </div>
+         <br>
+         <br>
+      <!-- Add a New List Item -->
+      <div>
+    <input type="text" id="input-text">
+    <button id="add-item">Add text</button>
+    <ul id="item-list"></ul>
+</div>
+
+
+
+<!-- Change Image on Click -->
+<div>
+    <img src="img1.jpg" id="changeRealImage" alt="" style="width: 200px; height: 200px;" >
+    <br>
+    <button id="changeImage">Click</button>
+</div>
+
+
+<!-- . Simple Form Validation -->
+
+<!-- When the user clicks submit:
+
+If input is empty → show a red error message
+
+If not empty → show “Submitted successfully” -->
+<br>
+
+<br>
+<div>
+  <form id="myForm" action="">
+    <label for="first">First Name</label>
+    <input id="first" name="first" type="text" placeholder="enter your firstname">
+
+    <label for="last">Last Name</label>
+    <input id="last" name="last" type="text" placeholder="enter your LastName">
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="password">
+
+    <button type="submit" id="submit">Click to submit</button>
+  </form>
+
+
+  <div id="form-message" aria-live="polite" style="margin-top:10px"></div>
+</div>
+
+
+
+
 
 
     <script src="domPractice.js"></script>
