@@ -144,3 +144,31 @@ const changeRealImage = document.getElementById("changeRealImage");
 
     }
   });
+
+
+  // chnage Text Color 
+const colorChange = document.getElementById("colorChange");
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const btn3 = document.getElementById("btn3");
+
+btn1.addEventListener("click", () => {
+    colorChange.style.color = "red";
+});
+
+btn2.addEventListener("click", () => {
+    colorChange.style.color = "blue";
+});
+
+btn3.addEventListener("click", () => {
+    colorChange.style.color = "green";
+});
+
+
+
+// disable button after one click 
+const btn5 = document.getElementById("btn5");
+btn5.addEventListener("click", () => {
+    btn5.disabled = true;     // disable the button
+    btn5.innerText = "Disabled";  // optional: change button text
+});
