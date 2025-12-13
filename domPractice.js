@@ -172,3 +172,28 @@ btn5.addEventListener("click", () => {
     btn5.disabled = true;     // disable the button
     btn5.innerText = "Disabled";  // optional: change button text
 });
+
+
+
+// Display Input Value in Real Time
+const input = document.getElementById("input");
+const paragraph1 = document.getElementById("paragraph");
+
+
+input.addEventListener('input', ()=>{
+    paragraph1.innerText = input.value;
+
+})
+
+
+//Dropdown show selected vlue 
+// Create a <select> dropdown.
+// When the user selects an option, display the selected value below it.
+
+const selectItem = document.getElementById("selectItem");
+const displayItem = document.getElementById("displayItem");
+
+selectItem.addEventListener("change", () => {
+    displayItem.innerText = selectItem.value;
+});
+

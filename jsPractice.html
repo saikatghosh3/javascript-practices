@@ -275,6 +275,72 @@ greet.apply(person, ["Dhaka", "Bangladesh"]);
 
 const newFunc = greet.bind(person, "Dhaka", "Bangladesh");
 
+
+
+
+
+
+
+
+// getter and setter fucntion in js  
+
+// setter : 
+
+const user = {
+    name:"saikat",
+    age: 29,
+    set userAge(value){
+        this.age= value;
+    }
+}
+
+
+user.userAge = 25; 
+console.log(user.age);
+
+
+
+// getter : 
+const user = {
+    name: "saikat", 
+    age: 22, 
+    get UserAge(){
+        return this.age;
+    }
+}
+
+console.log(user.userAge)
+
+
+
+// getter and setter function together 
+
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this._age = age;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(value) {
+    if (value < 18) {
+      console.log("Not allowed");
+      return;
+    }
+    this._age = value;
+  }
+}
+
+const u1 = new User("Saikat", 22);
+console.log(u1.age); 
+
+u1.age = 25; 
+
+
+
     
     </script>
 </body>
