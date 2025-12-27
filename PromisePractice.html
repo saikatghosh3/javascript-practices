@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    
+<script>
+
+// Create a promise that resolves after 2 seconds and
+//  prints "data loaded successfully"
+
+const loadData = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve("Data loaded sucessfully");
+    }, 2000)
+})
+
+
+loadData.then(result =>{
+    console.log(result);
+}).catch((err)=>{
+    console.log(err.message);
+    
+})
+
+
+ 
+// Problem 2
+
+// Create a promise that:
+
+// Resolves if isLoggedIn = true
+
+// Rejects if isLoggedIn = false
+
+
+
+const isLoggedIn = flase;
+const checkLogin = new Promise ((resolve, reject)=>{
+    if(isLoggedIn){
+        resolve("Welcome back!");
+    }else{
+        reject("please login first");
+    }
+});
+
+
+checkLogin
+.then(msg=> console.log(msg))
+.catch(err=> console.log(err));
+
+
+
+Problem
+
+// Simulate food order processing:
+
+// Order received
+
+// Food cooked after 3 seconds
+
+
+function processOrder(){
+    return new Promise ((resolve )=>{
+        console.log("order recived");
+
+        setTimeout(() => {
+            resolve("Food cooked")
+        }, 3000);
+        
+    })
+}
+
+processOrder().then(status =>{
+    console.log(status);
+})
+
+
+// Problem 5: Promise with Data Fetch Simulation
+// Problem
+
+// Return user data using promise after 1.5 seconds
+
+
+ function getUser(){
+    return new Promise (resolve => {
+        setTimeout(()=>{
+            resolve ({id:1, name: "saikat"});
+        },5000)
+    })
+ }
+
+ getUser().then(user => {
+    console.log(user.name);
+ });
+
+
+// Problem 6: Promise.all (Parallel Execution)
+// Problem
+
+// Load 3 APIs together and wait until all are done
+
+const api1 = Promise.resolve("Api 1 loaded");
+const api2 = Promise.resolve("Api 2 loaded");
+const api3 = Promise.resolve("Api 3 loaded");
+
+
+Promise.all([api1, api2, api3]).then(result =>{
+    console.log(result);
+    
+})
+
+
+
+// Convert this callback to promise:
+
+// setTimeout(() => {
+//   console.log("Task done");
+// }, 1000);
+
+function task() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Task done");
+    }, 1000);
+  });
+}
+
+task().then(msg => console.log(msg));
+
+
+</script>
+
+
+</body>
+</html>
