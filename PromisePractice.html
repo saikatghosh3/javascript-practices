@@ -132,6 +132,55 @@ function task() {
 task().then(msg => console.log(msg));
 
 
+
+
+// simple promise problem exercise 
+// Problem: Resolve a promise after 1 second
+function waitOneSecond(){
+    return new Promise((resolve)=>{
+        setTimeout(()=>resolve("done"), 1000);
+    });
+}
+
+
+// Reject a promise with error 
+function rejectNow(){
+    return new Promise.reject("Error happened")
+}
+
+// Promise that resolves if number > 10
+
+function checkNumber (num){
+    return new Promise((resolve, reject)=>{
+        if(num>10) resolve("ok");
+        else reject("Too small");
+    })
+}
+
+// chain two promises
+function first (){
+    return Promise.resolve(5);
+}
+
+function second (val){
+    return Promise.resolve(val *2);
+}
+
+first().then(second);
+
+// Run promises in parallel
+const p1 = Promise.resolve(1)
+const p2 = Promise.resolve(2)
+promise.all([p1, p2]).then(
+    console.log("yes resolved")
+)
+
+// Race between two promises
+
+const slow = new Promise(res=> setTimeout(()=>res("slow"),1000));
+const fast = new Promise(res => setTimeout(()=> res(fast), 100));
+promise.race([slow, first]).then(console.log);
+
 </script>
 
 
